@@ -58,14 +58,7 @@ and receives a failing score. The other metrics don\'t apply.
 
 ### Coverage
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | The ratio of unaccounted for, unauthorized      |
-|                 |   assets, to the total assets in the asset        |
-|                 | | inventory.                                      |
-+-----------------+---------------------------------------------------+
-| **Calculation** | | If the value of M4 is 0, there are no           |
-|                 |   unauthorized assets that remain unaccounted     |
-|                 |   for.                                            |
-|                 | | In this case, the value of the metric is 1.     |
-|                 |   Otherwise, the value is `(M2 - M4) / M2 `       |
-+-----------------+---------------------------------------------------+
+| **Metric**      | The ratio of unaccounted for, unauthorized assets, to the total assets in the asset inventory.    |
+|:-----------------|:---------------------------------------------------------------------------------------------------|
+| **Calculation** | If the value of M4 is 0, there are no unauthorized assets that remain unaccounted for. In this case, the value of the metric is 1. Otherwise, the value is `(M2 - M4) / M2`. |
+
