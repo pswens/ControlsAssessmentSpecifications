@@ -1,15 +1,14 @@
-name: Simple Usage
-
-on: push
-
-jobs:
-  convert_via_pandoc:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: docker://pandoc/core:2.9
-        with:
-          args: "--help" # gets appended to pandoc command
-
+library(pandoc)
+# Install version
+pandoc_install("2.7.3")
+#> ✔ Pandoc 2.7.3 already installed.
+#>   Use 'force = TRUE' to overwrite.
+pandoc_install("2.11.4")
+#> ✔ Pandoc 2.11.4 already installed.
+#>   Use 'force = TRUE' to overwrite.
+# Highest install is used
+pandoc_version()
+#> [1] '3.1.6'
 FILES=*.rst
 for f in $FILES
 do
