@@ -16,9 +16,10 @@ enterprise's network infrastructure, even if they are not under control
 of the enterprise. Review and update the inventory of all enterprise
 assets bi-annually, or more frequently.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Devices      Identify            1, 2, 3
+Asset Type | Security Function | Implementation Groups
+------------ | ------------- | ------------
+Devices | Identify | 1, 2, 3
+
 
 # Dependencies
 
