@@ -37,12 +37,10 @@ Devices | Identify | 2, 3
 2.  Identify the configurations for active asset discovery tools that
     interface with `GV1` by using `GV3`
 
-3.  
+3. Using the configuration information in `GV3`, check the approved configurations to verify that the tools are capable of interfacing with the asset inventory to make automatic updates.
+   1. Enumerate those tools that are compliant (M3)
+   2. Enumerate those that are not compliant (M4).
 
-    Using the configuration information in `GV3`, check the approved configurations to verify that the tools are capable of interfacing with the asset inventory to make automatic updates.
-
-    :   1.  Enumerate those tools that are compliant (M3)
-        2.  Enumerate those that are not compliant (M4).
 
 ## Measures
 
@@ -61,18 +59,16 @@ Devices | Identify | 2, 3
 -   If M5 is 0, then this safeguard is measured at a 0 and receives a
     failing score. The other metrics don\'t apply.
 
-Asset Discovery Coverage \^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^ ..
-list-table:
+## Asset Discovery Coverage
 
-    * - **Metric**
-      - | Asset Discovery Coverage
-    * - **Calculation**
-      - :code:`M1 / M6`
+| Metric              | Asset Discovery Coverage                  |
+|:--------------------|:-----------------------------------------:|
+| Calculation         | `M1 / M6`                                 |
+
 
 ### Tool Compliance Ratio
 
-+-----------------+-------------------------+
-| **Metric**      | | Tool Compliance Ratio |
-+-----------------+-------------------------+
-| **Calculation** | `M3 / M2`               |
-+-----------------+-------------------------+
+| Metric          | Tool Compliance Ratio |
+|:---------------:|:---------------------:|
+| Calculation     | `M3 / M2`             |
+
