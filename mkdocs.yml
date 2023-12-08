@@ -2,8 +2,9 @@ site_name: CIS Controls Self Assessment Tool Document Library
 
 nav:
     - Home: index.md
-    - About: 
-        - Terms of Use: source/terms-of-use
+    - Controls: 
+        - 'Control 1.1': source/control-1.1.md
+        
 
 theme:
     name: readthedocs
