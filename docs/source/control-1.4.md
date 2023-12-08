@@ -1,13 +1,15 @@
 1.4: Use Dynamic Host Configuration Protocol (DHCP) Logging to Update
-Enterprise Asset Inventory ====================================== Use
-DHCP logging on all DHCP servers or Internet Protocol (IP) address
+Enterprise Asset Inventory 
+====================================== 
+
+Use DHCP logging on all DHCP servers or Internet Protocol (IP) address
 management tools to update the enterprise's asset inventory. Review and
 use logs to update the enterprise's asset inventory weekly, or more
 frequently.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Devices      Identify            2, 3
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|------------------------|
+| Devices    | Identify          | 2, 3                   |
 
 # Dependencies
 
@@ -46,17 +48,15 @@ frequently.
 
 -   M4 \> 0 indicates a non up-to-date asset inventory
 
-DHCP Logging Quality \^\^\^\^\^\^\^\^\^\^\^\^\^\^ .. list-table:
+## DHCP Logging Quality
 
-    * - **Metric**
-      - | Ratio of appropriately configured DHCP logging enabled to known DHCP servers
-    * - **Calculation**
-      - :code:`M2 / M1`
+| Metric       | Ratio of appropriately configured DHCP logging enabled to known DHCP servers |
+|:-------------|:-----------------------------------------------------------------------------|
+| Calculation  | `M2 / M1`                                                                   |
 
-CMDB Configuration Quality \^\^\^\^\^\^\^\^\^\^\^\^\^\^ .. list-table:
+## CMDB Configuration Quality
 
-    * - **Metric**
-      - | Ratio of appropriately configured CMDB servers using DHCP logging to update
-      - | IP addresses
-    * - **Calculation**
-      - :code:`M4 / M3`
+| Metric          | Ratio of appropriately configured CMDB servers using DHCP logging to update IP addresses |
+|:---------------:|:---------------------------------------------------------------------------------------------|
+| Calculation     | `M4 / M3`                                                                                   |
+
