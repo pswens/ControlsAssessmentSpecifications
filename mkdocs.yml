@@ -3,7 +3,7 @@ site_name: CIS Controls Self Assessment Tool Document Library
 nav:
     - Home: index.md
     - Controls: 
-        - 'Controls 1.1': source/control-1.1.md
+        - 'Controls 1.1': source/control-1.1.rst
         
 
 theme:
