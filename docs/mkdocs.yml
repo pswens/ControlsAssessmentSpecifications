@@ -1,0 +1,10 @@
+site_name: CIS Controls Self Assessment Tool Document Library
+
+nav:
+    - Home: index.md
+    - About: cas.md
+    - Controls 1: source/control-1.1.md
+
+theme:
+    name: readthedocs
+    collapse_navigation: False
