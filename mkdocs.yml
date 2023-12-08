@@ -3,7 +3,7 @@ site_name: CIS Controls Self Assessment Tool Document Library
 nav:
     - Home: index.md
     - About: 
-        -Terms of Use: source/terms-of-use
+        - Terms of Use: source/terms-of-use
 
 theme:
     name: readthedocs
