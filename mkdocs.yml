@@ -5,7 +5,7 @@ nav:
     - About:
         - 'About': source/about/cas.md
         - 'Contributing to the CIS Controls Assessment Specification': source/about/contributing.md
-        - 'About the CIS Controls':source/about/controls.md
+        - 'About the CIS Controls': source/about/controls.md
         - 'Terms of user': source/terms-of-use.md
 
 theme:
