@@ -4,9 +4,9 @@ Utilize an active discovery tool to identify assets connected to the
 enterprise's network. Configure the active discovery tool to execute
 daily, or more frequently.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Devices      Detect              2, 3
+Asset Type | Security Function | Implementation Groups
+------------ | ------------- | ------------
+Devices | Identify | 2, 3
 
 ## Dependencies
 
