@@ -3,7 +3,7 @@ site_name: CIS Controls Self Assessment Tool Document Library
 nav:
     - Home: index.md
     - About:
-        - 'About': source/about/cas.md
+        - 'About': 'source/about/cas.md'
         - 'Contributing to the CIS Controls Assessment Specification': source/about/contributing.md
         - 'About the CIS Controls': source/about/controls.md
         - 'Terms of user': source/terms-of-use.md
