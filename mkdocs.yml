@@ -2,13 +2,7 @@ site_name: CIS Controls Self Assessment Tool Document Library
 
 nav:
     - Home: index.md
-    - Controls:
-        - 'Controls': source/Controls.md
-        - 'Controls 1.1': source/control-1.1.md
-        - 'Controls 1.2': source/control-1.2.md
-        - 'Controls 1.3': source/control-1.3.md
-        - 'Controls 1.4': source/control-1.4.md
-        - 'Controls 1.5': source/control-1.5.md
+    - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls.md
         
 
 theme:
