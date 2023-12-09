@@ -12,6 +12,4 @@ build:
 
 mkdocs:
   configuration: mkdocs.yml
-  markdown_extensions:
-    -tables
 
