@@ -1,20 +1,20 @@
-# 1.2: Address Unauthorized Assets
+## 1.2: Address Unauthorized Assets
 
 Ensure that a process exists to address unauthorized assets on a weekly
 basis. The enterprise may choose to remove the asset from the network,
 deny the asset from connecting remotely to the network, or quarantine
 the asset.
 
-  Asset Type   Security Function   Implementation Groups
-  ------------ ------------------- -----------------------
-  Devices      Respond             1, 2, 3
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|------------------------|
+| Devices    | Respond        | 1, 2, 3                |
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset
     Inventory
 
-## Inputs
+### Inputs
 
 1.  `GV1`: Detailed Enterprise Asset Inventory
 2.  `GV2`: Unauthorized Assets
@@ -26,7 +26,7 @@ the asset.
 1.  If the item is not reachable, it may be reasonable to assume it has
     been removed from the network and therefore dealt with.
 
-## Operations
+#### Operations
 
 If the optional disposition list is provided, the checks would be
 tailored to those dispositions. For the following, assume no disposition
@@ -41,7 +41,7 @@ list is available:
     2. Enumerate the items from `GV1` that are unreachable (M5)
 
 
-## Measures
+### Measures
 
 -   M1 = `GV1`
 -   M2 = Count of `GV2`
@@ -49,7 +49,7 @@ list is available:
 -   M4 = Count of items from `GV2` that are unreachable after scan
 -   M5 = Count of items from `GV1` that are unreachable after scan
 
-## Metrics
+### Metrics
 
 If M3 is greater than seven days, then this safeguard is measured at a 0
 and receives a failing score. The other metrics don\'t apply.
