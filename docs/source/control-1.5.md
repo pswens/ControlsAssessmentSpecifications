@@ -1,4 +1,6 @@
-# 1.5: Use a Passive Asset Discovery Tool
+-------------------------------------------------------------------
+
+## 1.5: Use a Passive Asset Discovery Tool
 
 Use a passive discovery tool to identify assets connected to the
 enterprise's network. Review and use scans to update the enterprise's
@@ -8,13 +10,13 @@ asset inventory at least weekly, or more frequently.
 |------------|-------------------|------------------------|
 | Devices    | Detect            | 3                      |
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 4.2: Establish and Maintain a Secure Configuration Process
     for Network Infrastructure
 -   Safeguard 12.4: Establish and Maintain Architecture Diagram(s)
 
-## Inputs
+### Inputs
 
 1.  `GV4`: Enterprise network architecture documentation
 2.  List of passive asset discovery tools in use by the organization.
@@ -24,7 +26,7 @@ asset inventory at least weekly, or more frequently.
     tool. Configurations should include the settings necessary for the
     tool to be able to update the enterprise\'s asset inventory
 
-## Operations
+#### Operations
 
 1.  Identify approved configuratons for passive asset discovery tools
     using `GV3`
@@ -40,7 +42,7 @@ asset inventory at least weekly, or more frequently.
     2. Create a list of the enterprise's networks that do not have coverage from any properly configured passive asset discovery tools (M4)
 
 
-## Measures
+### Measures
 
 -   M1 = Count of properly configured passive asset discovery tools
 -   M2 = Count of improperly configured passive asset discovery tools
@@ -50,9 +52,9 @@ asset inventory at least weekly, or more frequently.
     properly configured passive discovery tools
 -   M5 = Count of enterprise\'s networks.
 
-## Metrics
+### Metrics
 
-### Coverage
+#### Coverage
 
 | Metric          | The ratio of the organization's networks with coverage from at least one properly configured passive asset discovery tool to the total number of networks |
 |:---------------:|----------------------------------------------------------------------------------------------------------------------------|
