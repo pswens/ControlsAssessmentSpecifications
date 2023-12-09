@@ -8,7 +8,7 @@ nav:
         - 'Terms of Use': source/terms-of-use.md
         - 'Contributing': source/contributing.rst.md
     - CIS CONTROLS:
-        - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls.md
+        - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls1.md
         
 
 theme:
