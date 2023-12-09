@@ -1,5 +1,5 @@
-CIS Control 1: Inventory and Control of Enterprise Assets
-=======================================================
+# CIS Control 1: Inventory and Control of Enterprise Assets
+
 
 Actively manage (inventory, track, and correct) all enterprise assets
 (end-user devices, including portable and mobile; network devices;
