@@ -36,12 +36,10 @@ list is available:
     in `GV2`, check to see if the asset is present in the updated asset
     inventory from `GV1`.
 
-2.  
+2. For those items in `GV2` that are not in `GV1`, scan the network to determine if the item is still reachable on the network.
+    1. Enumerate the items from `GV2` that are unreachable (M4)
+    2. Enumerate the items from `GV1` that are unreachable (M5)
 
-    For those items in `GV2` that are not in `GV1`, scan the network to determine if the item is still reachable on the network.
-
-    :   1.  Enumerate the items from `GV2` that are unreachable (M4)
-        2.  Enumerate the items from `GV1` that are unreachable (M5)
 
 ## Measures
 
