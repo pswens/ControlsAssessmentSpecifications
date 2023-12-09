@@ -49,7 +49,10 @@ origination of network traffic from an asset on the network, and to be
 able to identify all potentially vulnerable, or impacted, assets of
 similar type or location during an incident.
 
+-------------------------------------------------------------------
+
 ## 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+
 
 Establish and maintain an accurate, detailed, and up-to-date inventory
 of all enterprise assets with the potential to store or process data, to
@@ -66,56 +69,47 @@ enterprise's network infrastructure, even if they are not under control
 of the enterprise. Review and update the inventory of all enterprise
 assets bi-annually, or more frequently.
 
-Asset Type | Security Function | Implementation Groups
------------- | ------------- | ------------
-Devices | Identify | 1, 2, 3
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|------------------------|
+| Devices    | Identify          | 1, 2, 3                |
 
 
-# Dependencies
+
+### Dependencies
 
 -   None
 
-# Inputs
+### Inputs
 
-1.  `GV1`: Detailed Enterprise Asset Inventory - The enterprise\'s list
-    of current approved inventory to include all assests as outlined in
-    the safeguard. This list is a mix of manual and tool-generated
-    endpoints that includes information such as authorized,
-    non-authorized, IP address, device type and any other information as
-    defined by the enterprise.
-2.  Aggregate Enterprise Asset Inventory - The enterprise\'s list of all
-    devices detected, manually or through automated scans, since the
-    last update to `GV1`.
-3.  Date of last update to the Detailed Enterprise Asset Inventory
+1. `GV1`: Detailed Enterprise Asset Inventory - The enterprise's list of current approved inventory to include all assets as outlined in the safeguard. This list is a mix of manual and tool-generated endpoints that includes information such as authorized, non-authorized, IP address, device type, and any other information as defined by the enterprise.
 
-## Assumptions
+2. Aggregate Enterprise Asset Inventory - The enterprise's list of all devices detected, manually or through automated scans, since the last update to `GV1`.
+
+3. Date of last update to the Detailed Enterprise Asset Inventory
+
+
+### Assumptions
 
 1.  Devices belonging to the organization, but not connected to the
     organization's network, require manual discovery in order to be
     included in the aggregate inventory.
 
-# Operations
+### Operations
 
-1.  
+1. Calculate the intersection of `GV1` and Input 2
 
-    Calculate the intersection of `GV1` and Input 2
+    1. Enumerate items in `GV1` that are not in Input 2 (M4)
+    2. Enumerate items in Input 2 not in Input 1 (`GV2`: M5). These assets are considered unauthorized.
 
-    :   1.  Enumerate items in `GV1` that are not in Input 2 (M4)
-        2.  Enumerate items in Input 2 not in Input 1 (`GV2`: M5). These
-            assets are considered unauthorized.
+2. Check items in Input 1 for complete or missing detailed information
 
-2.  
+    1. Enumerate items that have complete information (M6)
+    2. Enumerate items that do not have complete information or missing information (M7).
 
-    Check items in Input 1 for complete or missing detailed information
+3. Calculate the time (in months) since the last update to Input 1 by using the current date and Input 4 (M8).
 
-    :   1.  Enumerate items that have complete information (M6)
-        2.  Enumerate items that do not have complete information or
-            missing information (M7).
 
-3.  Calculate the time (in months) since the last update to Input 1 by
-    using current date and Input 4 (M8).
-
-# Measures
+### Measures
 
 -   M1 = `GV1`
 -   M2 = Count of items in Input 2
@@ -128,14 +122,14 @@ Devices | Identify | 1, 2, 3
     information
 -   M8 = Months since the last update to `GV1`
 
-# Metrics
+### Metrics
 
 -   If M1 is not provided or available, then this safeguard is measured
     at a 0 and receives a failing score. The other metrics don\'t apply.
 -   If M8 is greater than six months, then this safeguard is measured at
     a 0 and receives a failing score. The other metrics don\'t apply.
 
-## Accuracy Score
+#### Accuracy Score
 
 +-----------------+---------------------------------------------------+
 | **Metric**      | | What percentage of the aggregate endpoint       |
@@ -145,7 +139,7 @@ Devices | Identify | 1, 2, 3
 | **Calculation** | `M3 / M2`                                         |
 +-----------------+---------------------------------------------------+
 
-## Completeness Score
+#### Completeness Score
 
 +-----------------+---------------------------------------------------+
 | **Metric**      | | What percentage of the current enterprise asset |
@@ -155,7 +149,7 @@ Devices | Identify | 1, 2, 3
 | **Calculation** | `M8 / M1`                                         |
 +-----------------+---------------------------------------------------+
 
-## Procedural Review
+### Procedural Review
 
 Manual review/rating of the inventory procedures, to include adding and
 removing assets, and the time allowable or expected, after acquisition
