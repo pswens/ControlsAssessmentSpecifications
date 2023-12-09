@@ -10,7 +10,7 @@ to be monitored and protected within the enterprise. This will also
 support identifying unauthorized and unmanaged assets to remove or
 remediate.
 
-### Why is this CIS Control Critical?
+# Why is this CIS Control Critical?
 
 Enterprises cannot defend what they do not know they have. Managed
 control of all enterprise assets also plays a critical role in security
@@ -88,7 +88,7 @@ assets bi-annually, or more frequently.
 3. Date of last update to the Detailed Enterprise Asset Inventory
 
 
-### Assumptions
+#### Assumptions
 
 1.  Devices belonging to the organization, but not connected to the
     organization's network, require manual discovery in order to be
@@ -131,23 +131,17 @@ assets bi-annually, or more frequently.
 
 #### Accuracy Score
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | What percentage of the aggregate endpoint       |
-|                 |   inventory is accounted for in the current       |
-|                 |   enterprise asset inventory?                     |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `M3 / M2`                                         |
-+-----------------+---------------------------------------------------+
+| **Metric**      | What percentage of the aggregate endpoint inventory is accounted for in the current enterprise asset inventory? |
+|:---------------:|-------------------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M3 / M2`                                                                                                       |
+
 
 #### Completeness Score
 
-+-----------------+---------------------------------------------------+
-| **Metric**      | | What percentage of the current enterprise asset |
-|                 |   inventory contains necessary detailed           |
-|                 |   information?                                    |
-+-----------------+---------------------------------------------------+
-| **Calculation** | `M8 / M1`                                         |
-+-----------------+---------------------------------------------------+
+| **Metric**      | What percentage of the current enterprise asset inventory contains necessary detailed information? |
+|:---------------:|-------------------------------------------------------------------------------------------------------------------|
+| **Calculation** | `M8 / M1`                                                                                                       |
+
 
 ### Procedural Review
 
