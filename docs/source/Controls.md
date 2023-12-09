@@ -10,7 +10,7 @@ to be monitored and protected within the enterprise. This will also
 support identifying unauthorized and unmanaged assets to remove or
 remediate.
 
-# Why is this CIS Control Critical?
+**Why is this CIS Control Critical?**
 
 Enterprises cannot defend what they do not know they have. Managed
 control of all enterprise assets also plays a critical role in security
