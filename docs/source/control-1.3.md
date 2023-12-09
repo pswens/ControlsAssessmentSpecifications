@@ -1,4 +1,4 @@
-# 1.3: Utilize an Active Discovery Tool
+## 1.3: Utilize an Active Discovery Tool
 
 Utilize an active discovery tool to identify assets connected to the
 enterprise's network. Configure the active discovery tool to execute
@@ -8,11 +8,11 @@ Asset Type | Security Function | Implementation Groups
 ------------ | ------------- | ------------
 Devices | Identify | 2, 3
 
-## Dependencies
+### Dependencies
 
 -   Safeguard 4.1: Establish and Maintain a Secure Configuration Process
 
-## Inputs
+### Inputs
 
 1.  `GV1`: Enterprise asset inventory
 2.  The list of active discovery tool(s) used by the enterprise
@@ -22,14 +22,14 @@ Devices | Identify | 2, 3
 4.  Timeframe between two active asset discovery tool scans.
 5.  `GV3`: Configuration Standard
 
-### Assumptions
+#### Assumptions
 
 1.  The asset discovery tools on the provided list are active asset
     discovery tools, as opposed to passive asset discovery tools
     (verification of this is not performed during the following
     operations).
 
-## Operations
+### Operations
 
 1.  Identify enterprise assets not discovered by the active discovery
     tools by comparing Input 1 and Input 3 (M2).
@@ -42,7 +42,7 @@ Devices | Identify | 2, 3
    2. Enumerate those that are not compliant (M4).
 
 
-## Measures
+### Measures
 
 -   M1 = Count of all discovered assets from Input 3
 -   M2 = Count of undiscovered assets
@@ -52,21 +52,21 @@ Devices | Identify | 2, 3
 -   M6 = Count of `GV1`
 -   M7 = Timeframe in hours for Input 4
 
-## Metrics
+### Metrics
 
 -   If M7 is greater than 24 hours, then this safeguard is measured at a
     0 and receives a failing score. The other metrics don\'t apply.
 -   If M5 is 0, then this safeguard is measured at a 0 and receives a
     failing score. The other metrics don\'t apply.
 
-## Asset Discovery Coverage
+#### Asset Discovery Coverage
 
 | Metric              | Asset Discovery Coverage                  |
 |:--------------------|:-----------------------------------------:|
 | Calculation         | `M1 / M6`                                 |
 
 
-### Tool Compliance Ratio
+#### Tool Compliance Ratio
 
 | Metric          | Tool Compliance Ratio |
 |:---------------:|:---------------------:|
