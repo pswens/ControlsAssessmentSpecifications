@@ -2,7 +2,13 @@ site_name: CIS Controls Self Assessment Tool Document Library
 
 nav:
     - Home: index.md
-    - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls.md
+    - GENERAL:
+        - 'About the CIS Controls': source/About the CIS Controls.md
+        - 'About the CIS Controls Assessment Specification': source/About the CIS Controls Assessment Specification.md
+        - 'Terms of Use': source/terms-of-use.md
+        - 'Contributing': source/contributing.rst.md
+    - CIS CONTROLS:
+        - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls.md
         
 
 theme:
