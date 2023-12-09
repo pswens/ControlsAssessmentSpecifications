@@ -37,11 +37,4 @@ provides no benefit to the enterprise. It is critical to inventory,
 understand, assess, and manage all software connected to an enterprise's
 infrastructure.
 
-::: {#toc-control-2 .toctree maxdepth="1"}
-2.1: Establish and Maintain a Software Inventory \<control-2.1\> 2.2:
-Ensure Authorized Software is Currently Supported \<control-2.2\> 2.3:
-Address Unauthorized Software \<control-2.3\> 2.4: Utilize Automated
-Software Inventory Tools \<control-2.4\> 2.5: Allowlist Authorized
-Software \<control-2.5\> 2.6: Allowlist Authorized Libraries
-\<control-2.6\> 2.7: Allowlist Authorized Scripts\<control-2.7\>
-:::
+
