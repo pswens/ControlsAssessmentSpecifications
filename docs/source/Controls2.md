@@ -93,7 +93,7 @@ Establish and maintain a detailed inventory of all licensed software installed o
 
 -------------------------------------------------------------------------
 
-##2.2: Ensure Authorized Software is Currently Supported
+## 2.2: Ensure Authorized Software is Currently Supported
 
 Ensure that only currently supported software is designated as authorized in the software inventory for enterprise assets. If software is unsupported yet necessary for the fulfillment of the enterprise's mission, document an exception detailing mitigating controls and residual risk acceptance. For any unsupported software without an exception documentation, designate as unauthorized. Review the software list to verify software support at least monthly, or
 more frequently.
@@ -122,9 +122,9 @@ more frequently.
 
 ### Operations
 
-1. For each item in `GV5`, perform a lookup in Input 2 to verify supported/unsupported status.
+1. For each item in `GV5`, perform a lookup in Input 2 to verify the supported/unsupported status.
     1. Enumerate each item labeled "unsupported" but "supported" based on Input 2 (M2)
-    2. Enumerate each item labeled "supported" but is "unsupported" based on Input 2 (M3).
+    2. Enumerate each item labeled "supported" but "unsupported" based on Input 2 (M3).
 
 2. Identify and note truly "unsupported" items from Input 1 after conducting Operation 1 (M4).
 
@@ -132,7 +132,7 @@ more frequently.
     1. Note items that do not have appropriate exception documentation (M5).
     2. Note items that do have appropriate exception documentation (M6).
 
-4.  Compare date of `GV6` to the current date and note timeframe in
+4.  Compare the date of `GV6` to the current date and note the timeframe in
     weeks (M7).
 
 ### Measures
@@ -141,11 +141,11 @@ more frequently.
 -   M2 = Count of items in Input 1 that are mislabeled as unsupported
 -   M3 = Count of items in Input 1 that are mislabeled as supported
 -   M4 = Count of unsupported items
--   M5 = Count of items in Input 1 with that are no longer supported but
+-   M5 = Count of items in Input 1 that are no longer supported but
     exception documentation exists
--   M6 = Count of items in Input 1 with that are no longer supported and
+-   M6 = Count of items in Input 1 that are no longer supported and
     exception documentation does not exist
--   M7 = Timeframe in weeks of last update to the authorized software
+-   M7 = Timeframe in weeks of the last update to the authorized software
     inventory
 
 ### Metrics
@@ -184,12 +184,12 @@ more frequently.
 ## 2.3: Address Unauthorized Software
 
 Ensure that unauthorized software is either removed from use on
-enterprise assets or receives a documented exception. Review monthly, or
-more frequently..
+enterprise assets or receives a documented exception. Review monthly or
+more frequently.
 
-  Asset Type     Security Function   Implementation Groups
-  -------------- ------------------- -----------------------
-  Applications   Respond             1, 2, 3
+| Asset Type   | Security Function | Implementation Groups |
+|--------------|-------------------|------------------------|
+| Applications | Respond         | 1, 2, 3                |
 
 ### Dependencies
 
@@ -200,14 +200,14 @@ more frequently..
 ### Inputs
 
 1.  `GV5`: Authorized software inventory
-2.  `GV1`: Enterprise asset Invetory
+2.  `GV1`: Enterprise asset Inventory
 3.  Enterprise defined timeframe for scanning of enterprise assets.
 4.  Enterprise defined allowable timeframe for resolution of discovered
     unauthorized software (recommend at least monthly)
 
 ### Assumptions
 
-1. The scanning schedule timeframe is greater than the enterprise defined allowable timeframe for resolution of discovered unauthorized software.
+1. The scanning schedule timeframe is greater than the enterprise-defined allowable timeframe for the resolution of discovered unauthorized software.
 
 ### Operations
 
@@ -218,8 +218,8 @@ note software present on each asset (M1)
 3. Compare the scan results to
 the authorized software list in `GV5`
     1. Enumerate unauthorized software identified on assets (M2)
-4. Conduct subsquent scan of assets identified in Operation 1 as dictated by timeframe in Input 3
-    1. Compare to list generated in Operation 3 (M2) 
+4. Conduct a subsequent scan of assets identified in Operation 1 as dictated by the timeframe in Input 3
+    1. Compare to a list generated in Operation 3 (M2) 
 5. For each software still present in Operation 4, check the authorized software list in `GV5`
     1. Software that remains installed and is not listed in `GV5` is placed on the unaddressed software list (M3) for that asset.
 
@@ -246,4 +246,60 @@ the authorized software list in `GV5`
 
 #### Unauthorized software for the enterprise
 
-- The enterprise metric is calculated through averaging the results calculated above perasset.
+- The enterprise metric is calculated by averaging the results calculated above per asset.
+
+--------------------------------------------------------------------------
+
+## 2.4: Utilize Automated Software Inventory Tools
+
+Utilize software inventory tools, when possible, throughout the
+enterprise to automate the discovery and documentation of installed
+software.
+
+| Asset Type   | Security Function | Implementation Groups |
+|--------------|-------------------|------------------------|
+| Applications | Detect          | 2, 3                |
+
+### Dependencies
+
+-   Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset
+    Inventory
+-   Safeguard 2.3: Address Unauthorized Software
+
+### Inputs
+
+1.  `GV1`: Enterprise asset inventory
+2.  `GV7`: Software capable assets
+3.  List of software inventory tools
+
+### Operations
+
+1.  Use `GV1` and `GV7` to identify and enumerate assets unable to
+    support sofware (M2).
+
+2. For each software capable asset `GV7`:
+
+    1. Identify and enumerate if the asset is covered by at least one software inventory tool (M3)
+    
+    2. Identify and enumerate if the asset is not covered by at least one software inventory tool (M4)
+
+
+### Measures
+
+-   M1 = Count of `GV7`
+-   M2 = Count of assets unable to support software
+-   M3 = Count of assets covered by software inventory tools
+-   M4 = Count of assets not covered by software inventory tools
+-   M5 = Count of Input 2
+
+### Metrics
+
+-   If M5 is 0 or unavailable, then this safeguard is measured at a 0
+    and receives a failing score. The other metrics don't apply.
+
+#### Inventory Tool Coverage
+
+| Metric          | The percentage of endpoints covered by software inventory tools to the total number of applicable endpoints |
+| :--------------  | :--------------------------------------------------------------------------------------------------------------  |
+| Calculation     | :code:`M3 / M1`                                                                                                 |
+
