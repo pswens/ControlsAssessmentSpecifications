@@ -10,6 +10,7 @@ nav:
     - CIS CONTROLS:
         - 'CIS Control 1: Inventory and Control of Enterprise Assets': source/Controls1.md
         - 'CIS Control 2: Inventory and Control of Software Assets': source/Controls2.md
+        - 'CIS Control 3: Data Protection': source/Controls3.md
         
 
 theme:
