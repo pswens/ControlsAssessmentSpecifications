@@ -173,12 +173,12 @@ Configure data access control lists based on a user’s need to know. Apply data
 
 ### Inputs
 
-1. :code:`GV12`: Sensitive Data Inventory
-2. :code:`GV1`: Enterprise asset inventory
-3. :code:`GV3`: Configuration Standards
-4. :code:`GV13`: Portion of data management process addressing data owners
-5. :code:`GV14`: Portion of data management process addressing data handling
-6. :code:`GV22`: Inventory of Accounts
+1. `GV12`: Sensitive Data Inventory
+2. `GV1`: Enterprise asset inventory
+3. `GV3`: Configuration Standards
+4. `GV13`: Portion of data management process addressing data owners
+5. `GV14`: Portion of data management process addressing data handling
+6. `GV22`: Inventory of Accounts
 
 ### Assumptions
 
@@ -189,8 +189,8 @@ Configure data access control lists based on a user’s need to know. Apply data
    2. Identify and enumerate sensitive data not correctly mapped to user accounts (M2)
 2. For each enterprise asset storing sensitive data, as outlined by :code:`GV12`,
    1. Identify and enumerate all assets storing sensitive data (M3)
-   2. Use :code:`GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
-   3. Use :code:`GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
+   2. Use `GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
+   3. Use `GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
 
 ### Measures
 
@@ -199,9 +199,9 @@ Configure data access control lists based on a user’s need to know. Apply data
 - M3 = Count of assets storing sensitive data
 - M4 = Count of properly configured assets to support data access control
 - M5 = Count of improperly configured assets to support data access control
-- M6 = :code:`GV17`
-- M7 = :code:`GV13`
-- M8 = :code:`GV14`
+- M6 = `GV17`
+- M7 = `GV13`
+- M8 = `GV14`
 
 ### Metrics
 
@@ -223,6 +223,63 @@ If either M7 or M8 is 0, this safeguard receives a failing score. The other metr
 -------------------------------------------------------------------------
 
 ## 3.4: Enforce Data Retention
+
+Retain data according to the enterprise’s data management process. Data retention must include both minimum and maximum timelines.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 3.1: Establish and Maintain a Data Management Process
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+
+### Inputs
+
+1. `GV15`: Data Retention Limits outlined in the data management process
+2. `GV11`: Portion of data management process addressing data sensitivity
+3. `GV12`: Sensitive Data Inventory
+
+### Operations
+
+1. For each sensitive data type covered in `GV11`,
+   1. Enumerate the number of types of sensitivity (`GV17`: M1), at a minimum one to differentiate sensitive data from other data
+   2. Identify and enumerate if each type has a minimum retention time (M2) as defined by `GV15`
+   3. Identify and enumerate if each type has a maximum retention time (M3) as defined by `GV15`
+2. Using the output of Operation 1.1 and 1.2, check the data inventory `GV12` for enforcement of data retention
+   1. Identify and enumerate items in the inventory that comply with retention timelines (M4)
+   2. Identify and enumerate items in the inventory that do not comply with retention timelines (M5)
+
+### Measures
+
+- M1 = Count of sensitivity types that require retention timelines
+- M2 = Count of sensitivity types that include minimum retention times
+- M3 = Count of sensitivity types that include maximum retention times
+- M4 = Count of data in inventory that comply with retention policy
+- M5 = Count of data in inventory that do not comply with retention policy
+- M6 = Count of `GV12`
+
+### Metrics
+
+If `GV15` is 0, this safeguard receives a failing score. The other metrics don't apply.
+
+#### Completeness of Policy
+
+| Metric          | The percentage of sensitivity types that include minimum retention timelines |
+|-----------------|-----------------------------------------------------------------------------|
+| Calculation     | `M2 / M1`                                                           |
+
+| Metric          | The percentage of sensitivity types that include maximum retention timelines |
+|-----------------|-----------------------------------------------------------------------------|
+| Calculation     | `M3 / M1`                                                           |
+
+#### Enforcement of Retention Policy
+
+| Metric          | The percentage of sensitivity data that complies with retention policy |
+|-----------------|-----------------------------------------------------------------------|
+| Calculation     | `M4 / M6`                                                       |
+
 
 -------------------------------------------------------------------------
 
