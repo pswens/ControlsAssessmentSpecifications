@@ -285,39 +285,510 @@ If `GV15` is 0, this safeguard receives a failing score. The other metrics don't
 
 ## 3.5: Securely Dispose of Data
 
+Securely dispose of data as outlined in the enterprise’s data management process. Ensure the disposal process and method are commensurate with the data sensitivity.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 3.1: Establish and Maintain a Data Management Process
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+
+### Inputs
+
+1. `GV16`: Data disposal requirement portion of data management process
+2. `GV11`: Portion of data management process addressing data sensitivity
+3. `GV17`: Count of Sensitive data types
+4. `GV12`: Sensitive Data Inventory
+
+### Operations
+
+1. For each sensitive data type covered in `GV17`,
+   1. Identify and enumerate each type has a disposal method and process as defined by `GV16` (M2)
+   2. Identify and enumerate each type that does not have a disposal method and process as defined by `GV16` (M3)
+2. For each item in `GV12`, determine whether the data complies with the disposal requirements outlined in `GV17`
+   1. Enumerate data that does not comply with disposal requirements (M4)
+   2. Enumerate data that complies with disposal requirements (M5)
+
+### Measures
+
+- M1 = `GV17`
+- M2 = Count of sensitive data types with an outlined disposal method
+- M3 = Count of sensitive data types without an outlined disposal method
+- M4 = Count of data in inventory that does not comply with disposal requirement
+- M5 = Count of data in inventory that complies with disposal requirement
+- M6 = Count of items in `GV12`
+
+### Metrics
+
+- If `GV16` is 0, this safeguard receives a failing score. The other metrics don't apply.
+
+#### Completeness of Disposal Process
+
+| Metric          | The percentage of data sensitivity types that contain a disposal method and process |
+|-----------------|---------------------------------------------------------------------------------------|
+| Calculation     | `M2 / M1`                                                                             |
+
+#### Compliance to Disposal Process
+
+| Metric          | The percentage of compliance to the data disposal process |
+|-----------------|---------------------------------------------------------|
+| Calculation     | `M5 / M6`                                              |
+
 -------------------------------------------------------------------------
 
 ## 3.6: Encrypt Data on End-User Devices
+
+Encrypt data on end-user devices containing sensitive data. Example implementations can include, Windows BitLocker®, Apple FileVault®, Linux® dm-crypt.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Devices    | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV5`: Authorized software inventory
+3. `GV3`: Configuration Standards
+
+### Operations
+
+1. For each asset in `GV1`, identify end-user devices
+   1. Enumerate the end-user devices (M1)
+   2. Use `GV5` to identify and enumerate the assets that have encryption software installed (M2)
+   3. Use `GV5` to identify and enumerate the assets without encryption software (M3)
+2. For each encryption software installed on assets (M2), use `GV3` to determine whether the software is properly configured
+   1. Enumerate the encryption software that is properly configured (M4)
+   2. Enumerate the encryption software that is improperly configured (M5)
+
+### Measures
+
+- M1 = Count of approved end-user devices
+- M2 = Count of approved end-user devices with encryption software installed
+- M3 = Count of approved end-user devices without encryption software
+- M4 = Count of properly configured end-user devices
+- M5 = Count of improperly configured end-user devices
+
+### Metrics
+
+- Installed Software Coverage
+
+| Metric          | The percentage of approved mobile devices that are equipped with approved encryption software. |
+|-----------------|---------------------------------------------------------------------------------------|
+| Calculation     | `M2 / M1`                                                                             |
+
+- Appropriately Configured Devices
+
+| Metric          | The percentage of approved mobile devices equipped with approved encryption software that meet or exceed the approved configuration policy. |
+|-----------------|---------------------------------------------------------|
+| Calculation     | `M3 / M1`                                              |
 
 -------------------------------------------------------------------------
 
 ## 3.7: Establish and Maintain a Data Classification Scheme
 
+Establish and maintain an overall data classification scheme for the enterprise. Enterprises may use labels, such as “Sensitive”, “Confidential” and “Public”, and classify their data according to those labels. Review and update the classification scheme annually, or when significant enterprise changes occur that could impact this Safeguard.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Identify          | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 3.1: Establish and Maintain a Data Management Process
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+
+### Inputs
+
+1. Enterprise's data classification scheme
+2. `GV17`: Sensitive Data types
+3. `GV12`: Sensitive Data Inventory
+4. Date of last review of the data classification scheme
+
+### Operations
+
+1. Check if the enterprise has a data classification scheme (Input 1).
+   1. If Input 1 exists, M = 1
+   2. Otherwise M1 = 0
+2. Using `GV17` determine if the enterprise has a way to categorize the type of data within the classification scheme
+   1. Enumerate the sensitivity types that are included in the classification scheme (M2)
+   2. Enumerate the sensitivity types that are not included in the classification scheme (M3)
+3. Compare `GV12` and Input 1
+   1. Identify and enumerate data that contains an accurate classification per the classification scheme (M4)
+   2. Identify and enumerate data that does not contain a classification or contains an inaccurate classification per the classification scheme (M5)
+4. Compare the current date to that provided in Input 4. Note the timeframe in months. (M8)
+
+### Measures
+
+- M1 = Output of Operation 1 
+- M2 = Sensitivity addressed by the classification scheme
+- M3 = Sensitivity not addressed by the classification scheme
+- M4 = Data properly categorized per the classification scheme
+- M5 = Data lacking or improperly categorized per the classification scheme
+- M6 = Count of items in `GV17`
+- M7 = Count of `GV12`
+- M8 = Count of months since the last review of the classification scheme
+
+### Metrics
+
+- If M1 is 0, this safeguard receives a failing score. The other metrics don't apply.
+- If M8 is greater than twelve, this safeguard receives a failing score. The other metrics don't apply.
+
+#### Completeness of Classification Scheme
+
+| Metric          | The percentage of sensitive data types covered within the classification scheme. |
+|-----------------|------------------------------------------------------------------------------|
+| Calculation     | `M2 / M6`                                                                    |
+
+#### Implementation of the Classification Scheme
+
+| Metric          | The percentage of data categorized using the classification scheme. |
+|-----------------|-------------------------------------------------------------------|
+| Calculation     | `M4 / M7`               |
 -------------------------------------------------------------------------
 
 ## 3.8: Document Data Flows
 
+Data flow documentation includes service provider data flows and should be based on the enterprise’s data management process. Review and update documentation annually, or when significant enterprise changes occur that could impact this Safeguard.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Identify          | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 3.1: Establish and Maintain a Data Management Process
+- Safeguard 3.2: Establish and Maintain a Data Inventory 
+
+### Inputs
+
+1. Documentation outlining data flow for enterprise-owned data. Documentation should include, at a minimum, data flows to external enterprises.
+2. `GV12`: Sensitive Data Inventory
+3. Date of last review of the data flow documentation
+
+### Operations
+
+1. Check if the enterprise has data flow documentation (Input 1).
+   1. If Input 1 exists M = 1
+   2. Otherwise M1 = 0
+2. Using `GV12` and identify data that flows to external enterprises
+   1. Enumerate the data that flows to external enterprises (M2)
+3. Compare Input 1 and the output of Operation 2
+   1. Enumerate data flows from Operation 2 that are included in Input 1 (M3)
+   2. Enumerate data flows from Operation 2 that are not included in Input 1 (M4)
+4. Compare the current date to that provided in Input 3.  Note the timeframe in months (M5)
+
+### Measures
+
+- M1 = Output of Operation 1 
+- M2 = Count of data flows to external enterprises
+- M3 = Count of data flows included in the data flow documentation
+- M4 = Count of data flows not included in the data flow documentation
+- M5 = Count of months since last review of the data flow documentation
+
+### Metrics
+
+- If M1 is 0, this safeguard receives a failing score. The other metrics don't apply.
+- If M5 is greater than twelve, this safeguard receives a failing score. The other metrics don't apply.
+
+#### Coverage of Data Flow Documentation
+
+| Metric          | The percentage of existing data flows in the enterprise's data flow documentation. |
+|-----------------|------------------------------------------------------------------------------|
+| Calculation     | `M3 / M2`                                                                    |
+
+
 -------------------------------------------------------------------------
 
-## 3.9: Encrypt Data on Removable Media
+### 3.9: Encrypt Data on Removable Media
+
+Encrypt data on removable media.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV5`: Authorized software inventory
+3. `GV3`: Configuration Standards
+
+### Assumptions
+
+- Enterprise asset inventory includes removable media
+
+### Operations
+
+1. Use `GV1` to identify and enumerate assets authorized to support removable media (M1)
+2. Use `GV5` to identify encryption software installed on assets identified in Operation 1 (M1)
+   1. Enumerate the number of assets with encryption software installed (M2)
+   2. Enumerate the number of assets without encryption software installed (M3)
+3. For assets identified in Operation 2.1, use `GV3` to check configurations of encryption software
+   1. Enumerate assets that have properly configured encryption software (M4)
+   2. Enumerate assets that have improperly configured encryption software (M5)
+
+### Measures
+
+- M1 = Count of assets authorized to support removable media
+- M2 = Count of authorized assets with encryption software installed
+- M3 = Count of authorized assets without encryption software installed
+- M4 = Count of authorized assets with properly configured encryption software
+- M5 = Count of authorized assets with improperly configured encryption software
+
+### Metrics
+
+#### Coverage
+
+| Metric          | The percentage of appropriately configured assets to support removable media. |
+|-----------------|-----------------------------------------------------------------------|
+| Calculation     | `M4 / M1`                                                         |
 
 -------------------------------------------------------------------------
 
 ## 3.10: Encrypt Sensitive Data in Transit
 
+Encrypt sensitive data in transit. Example implementations can include, Transport Layer Security (TLS) and Open Secure Shell (OpenSSH).
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV12`: Sensitive Data Inventory
+2. `GV5`: Configuration Information
+
+### Operations
+
+1. For each item in `GV12`, identify the means and components for encrypting data in transit.
+2. Compare the output of Operation 1 with `GV5` to check appropriate approved configurations
+   1. Enumerate the data items in `GV12` that are properly configured (M2)
+   2. Enumerate the data items in `GV12` that are improperly configured (M3)
+
+### Measures
+
+- M1 = Count of items in `GV12` 
+- M2 = Count of data with properly configured encryption components
+- M3 = Count of data with improperly configured encryption components
+
+### Metrics
+
+#### Coverage
+
+| Metric          | The percentage of sensitive data properly configured to be encrypted in transit. |
+|-----------------|-----------------------------------------------------------------------------|
+| Calculation     | `M2 / M1`                                                                   |
+
 -------------------------------------------------------------------------
 
 ## 3.11: Encrypt Sensitive Data At Rest
+
+Encrypt sensitive data at rest on servers, applications, and databases containing sensitive data. Storage-layer encryption, also known as server-side encryption, meets the minimum requirement of this Safeguard. Additional encryption methods may include application-layer encryption, also known as client-side encryption, where access to the data storage device(s) does not permit access to the plain-text data.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+
+### Inputs
+
+1. `GV12`: Sensitive data inventory
+2. `GV4`: Enterprise Network Architecture Documentation
+3. `GV18`: Enterprise assets storing sensitive data
+
+### Operations
+
+1. Use `GV5` to identify and enumerate all encryption tools requiring secondary authentication systems (M1)
+2. Use `GV12` and `GV1` to identify and enumerate all enterprise assets storing sensitive data (`GV19`: M2)
+3. Compare the output of Operation 1 and Operation 2
+   1. Identify and enumerate assets with at least one encryption tool from M1 installed (M4)
+   2. Identify and enumerate assets without at least one encryption tool from M1 installed (M5)
+
+### Measures
+
+- M1 = Count of authorized encryption tools requiring secondary authentication systems
+- M2 = Count of enterprise assets storing sensitive data
+- M3 = Count of assets with at least one encryption tool installed
+- M4 = Count of assets without at least one encryption tool installed
+
+### Metrics
+
+#### Coverage
+
+| Metric          | The percentage of assets storing sensitive data covered by an encryption tool. |
+|-----------------|-----------------------------------------------------------------------------|
+| Calculation     | `M3 / M2`                                                                   |
 
 -------------------------------------------------------------------------
 
 ## 3.12: Segment Data Processing and Storage Based on Sensitivity
 
+Segment data processing and storage
+based on the sensitivity of the data. Do not process sensitive data on
+enterprise assets intended for lower sensitivity data.
+
+| Asset Type   | Security Function | Implementation Groups |
+|--------------|-------------------|------------------------|
+| Network | Protect          | 2, 3                |
+
+### Dependencies
+
+-   Safeguard 3.2: Establish and Maintain a Data Inventory
+-   Safeguard 12.4: Establish and Maintain Architecture Diagram(s)
+
+### Inputs
+
+1.  `GV12`: Sensitive Data Inventory
+2.  `GV4`: Enterprise Network Architecture Documentation
+
+### Assumptions 
+
+1. An asset's overall sensitivity level should be the highest sensitivity level of the data it stores/processes/transmits. If a system contains any sensitive information, that asset should be treated accordingly and should be properly separated from networks or network segments that don't have a need to access that type of sensitive information.
+
+### Operations
+
+1.  For each item in `GV12` identify the assets that store, process, or
+    transmit sensitive data (:code:\`GV18: M1)
+
+2. Use the output of Operation 1 and `GV4` to identify networks/VLANs connected to the assets:
+
+    1. Identify and enumerate any instances of properly separated assets from less sensitive networks (M2)
+    2. Identify and enumerate any instances of improperly separated assets from less sensitive networks (M3)
+
+### Measures
+
+-   M1 = Count of assets storing, processing, or transmitting sensitive
+    data
+-   M2 = Count of sensitive assets properly separated from less
+    sensitive networks
+-   M3 = Count of sensitive assets improperly separated from less
+    sensitive networks
+
+### Metrics
+
+#### Coverage
+
+| **Metric**      | The percentage of properly separated sensitive assets.                   |
+| :-------------- | :----------------------------------------------------------------------------------------------- |
+| **Calculation** | `M2 / M1`                                                            |
+
+
 -------------------------------------------------------------------------
 
 ## 3.13: Deploy a Data Loss Prevention Solution
+
+Implement an automated tool, such as a host-based Data Loss Prevention (DLP) tool, to identify all sensitive data stored, processed, or transmitted through enterprise assets, including those located onsite or at a remote service provider, and update the enterprise's sensitive data inventory.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 3                     |
+
+### Dependencies
+
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+
+### Inputs
+
+1. `GV18`: Enterprise assets storing, processing, or transmitting sensitive data
+2. `GV5`: Authorized Software inventory
+3. `GV3`: Configuration Standards
+
+### Operations
+
+1. Use `GV5` to identify and enumerate all data loss prevention software
+2. Compare `GV18` and the output of Operation 1
+   1. Identify and enumerate each asset in `GV18` with data loss prevention software installed (M2)
+   2. Identify and enumerate each asset in `GV18` without data loss prevention software installed (M3)
+3. For assets with data loss prevention installed from Operation 2.1, check `GV3` for configuration information
+   1. Identify and enumerate assets with properly configured data loss prevention software (M4)
+   2. Identify and enumerate assets with improperly configured data loss prevention software (M5)
+
+### Measures
+
+- M1 = Count of `GV18`
+- M2 = Count of assets with data loss prevention software
+- M3 = Count of assets without data loss prevention software
+- M4 = Count of assets with properly configured data loss prevention software
+- M5 = Count of assets with improperly configured data loss prevention software
+
+### Metrics
+
+#### Coverage
+
+| Metric          | The percentage of assets covered by at least one properly configured data loss prevention software instance. |
+|-----------------|-------------------------------------------------------------------------------------------------------------|
+| Calculation     | `M4 / M1`                                                                                                   |
+
 
 -------------------------------------------------------------------------
 
 ## 3.14: Log Sensitive Data Access
 
+Log sensitive data access, including modification and disposal.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Detect            | 3                     |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV5`: Authorized software inventory
+2. `GV19`: Enterprise assets storing sensitive data
+3. `GV3`: Configuration Standards
+
+### Operations
+
+1. Using `GV3` identify authorized logging software
+2. For each asset in `GV19`, use the output from Operation 1
+   1. Identify and enumerate assets with logging software installed (M2)
+   2. Identify and enumerate assets that do not have logging software installed (M3)
+3. For logging software installed, check configuration using `GV3`
+   1. Identify and enumerate software that is properly configured (M4)
+   2. Identify and enumerate software that is improperly configured (M5)
+
+### Measures
+
+- M1 = Count of `GV19`
+- M2 = Count of assets storing sensitive data with logging software
+- M3 = Count of assets storing sensitive data without logging software
+- M4 = Count of assets with properly configured logging
+- M5 = Count of assets with improperly configured logging
+
+### Metrics
+
+#### Coverage
+
+| Metric          | The percentage of properly configured logging on assets storing sensitive data. |
+|-----------------|---------------------------------------------------------------------------------|
+| Calculation     | `M4 / M1`                                                                       |
