@@ -67,8 +67,6 @@ Establish and maintain a data management process. In the process, address data s
    4. Data retention limits based on the sensitivity of data. If so, M4 = 1. Otherwise, M4 = 0. (`GV15`)
    5. Disposal requirements based on the sensitivity of data. If so, M5 = 1. Otherwise, M5 = 0. (`GV16`)
 
-
-
 ### Measures
 
 -   M1 = Does the process address data sensitivity
@@ -124,8 +122,6 @@ Establish and maintain a data inventory based on the enterprise’s data managem
    1. Identify and enumerate items that have partial mapping to assets (M6)
    2. Identify and enumerate items that have no mapping at all (M7)
 4. Compare the current date to Input 4 and capture the timeframe in months (M8)
-
-
 
 ### Measures
 
