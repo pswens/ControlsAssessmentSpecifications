@@ -60,12 +60,13 @@ Establish and maintain a data management process. In the process, address data s
 ### Operations
 
 1. Review `GV10` to determine if, at a minimum, it includes:
-   
-  1. Addressing data sensitivity. If so, M1 = 1. Otherwise M1 = 0. (`GV11`)
-  2. Captures data owner. If so, M2 = 1. Otherwise M2 = 0. (`GV13`)
-  3. Handling of data. If so, M3 = 1. Otherwise, M3 = 0. (`GV14`)
-  4. Data retention limits based on the sensitivity of data. If so, M4 = 1. Otherwise, M4 = 0. (`GV15`)
-  5. Disposal requirements based on the sensitivity of data. If so, M5 = 1. Otherwise, M5 = 0. (`GV16`)
+
+   1. Addressing data sensitivity. If so, M1 = 1. Otherwise M1 = 0. (`GV11`)
+   2. Captures data owner. If so, M2 = 1. Otherwise M2 = 0. (`GV13`)
+   3. Handling of data. If so, M3 = 1. Otherwise, M3 = 0. (`GV14`)
+   4. Data retention limits based on the sensitivity of data. If so, M4 = 1. Otherwise, M4 = 0. (`GV15`)
+   5. Disposal requirements based on the sensitivity of data. If so, M5 = 1. Otherwise, M5 = 0. (`GV16`)
+
 
 ### Measures
 
@@ -75,7 +76,7 @@ Establish and maintain a data management process. In the process, address data s
 -   M4 = Does the process include data retention limits based on
     sensitivity of data
 -   M5 = Does the process include guidance on disposal requirements
-    based on the sensitivity of data
+    based on the sensitivity of the data
 -   M6 = `GV10`
 
 ### Metrics
@@ -93,9 +94,131 @@ Establish and maintain a data management process. In the process, address data s
 
 ## 3.2: Establish and Maintain a Data Inventory
 
+Establish and maintain a data inventory based on the enterprise’s data management process. Inventory sensitive data, at a minimum. Review and update inventory annually, at a minimum, with a priority on sensitive data.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Identify          | 1, 2, 3               |
+
+### Dependencies
+
+- Sub-control 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+
+### Inputs
+
+1. `GV11`: Portion of data management process addressing data sensitivity
+2. `GV12`: Data Inventory consisting of the data set of sensitive information for which the enterprise is responsible
+3. `GV1`: Enterprise asset inventory
+4. Date of the last update to the sensitive data inventory
+
+### Operations
+
+1. Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process
+   1. Identify and enumerate items in the data set that have a mapping (M2)
+   2. Identify and enumerate items in the data set that do not have a mapping (M3)
+2. Use `GV1` and M2 from Operation 1 to map the data set to assets storing data
+   1. Identify and enumerate items that have complete and correct mapping to asset and sensitivity (M4)
+   2. Identify and enumerate items that have partial mapping to sensitivity (M5)
+3. Use `GV1` and M3 from Operation 2 to map the data set, without sensitivity mapping, to assets storing data
+   1. Identify and enumerate items that have partial mapping to assets (M6)
+   2. Identify and enumerate items that have no mapping at all (M7)
+4. Compare the current date to Input 4 and capture the timeframe in months (M8)
+
+
+
+### Measures
+
+- M1 = `GV11`
+- M2 = Count of sensitive data addressed in `GV11`
+- M3 = Count of sensitive data not addressed in `GV11`
+- M4 = Count of data with complete sensitivity and asset storage inventory
+- M5 = Count of data with partial mapping to sensitivity
+- M6 = Count of data with partial mapping to assets
+- M7 = Count of data with no mapping to sensitivity or asset
+- M8 = Timeframe since the last update to the sensitive data inventory in months
+- M9 = Count of items in `GV12`
+
+### Metrics
+
+- If M1 is 0, this safeguard receives a failing score. The other metrics don't apply.
+- If M9 is greater than 12 months, this safeguard is scored at zero and receives a failing score. The other metrics don't apply.
+
+#### Completeness of Sensitive Data Inventory
+
+| Metric          | Percentage of data with complete information |
+|-----------------|--------------------------------------------|
+| Calculation     | `M4 / M9`                                  |
+
+#### Partial Completeness of Sensitive Data Inventory
+
+| Metric          | Percentage of data with partial inventory |
+|-----------------|-----------------------------------------|
+| Calculation     | `(M5 + M6) / M9`                         |
+
 -------------------------------------------------------------------------
 
 ## 3.3: Configure Data Access Control Lists
+
+Configure data access control lists based on a user’s need to know. Apply data access control lists, also known as access permissions, to local and remote file systems, databases, and applications.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Data       | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 3.2: Establish and Maintain a Data Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+- Safeguard 5.1: Establish and Maintain an Inventory of Accounts
+
+### Inputs
+
+1. :code:`GV12`: Sensitive Data Inventory
+2. :code:`GV1`: Enterprise asset inventory
+3. :code:`GV3`: Configuration Standards
+4. :code:`GV13`: Portion of data management process addressing data owners
+5. :code:`GV14`: Portion of data management process addressing data handling
+6. :code:`GV22`: Inventory of Accounts
+
+### Assumptions
+
+### Operations
+
+1. Use the data management process, specifically :code:`GV13` and :code:`GV14`, as guidelines to map user accounts to sensitive data in :code:`GV12`.
+   1. Identify and enumerate sensitive data correctly mapped to user accounts (M1)
+   2. Identify and enumerate sensitive data not correctly mapped to user accounts (M2)
+2. For each enterprise asset storing sensitive data, as outlined by :code:`GV12`,
+   1. Identify and enumerate all assets storing sensitive data (M3)
+   2. Use :code:`GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
+   3. Use :code:`GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
+
+### Measures
+
+- M1 = Count of sensitive data correctly mapped to user accounts per the data management process
+- M2 = Count of sensitive data not correctly mapped to user accounts per the data management process
+- M3 = Count of assets storing sensitive data
+- M4 = Count of properly configured assets to support data access control
+- M5 = Count of improperly configured assets to support data access control
+- M6 = :code:`GV17`
+- M7 = :code:`GV13`
+- M8 = :code:`GV14`
+
+### Metrics
+
+If either M7 or M8 is 0, this safeguard receives a failing score. The other metrics don't apply.
+
+#### Completeness of User Access Control
+
+| Metric          | Percentage of user accounts properly mapped to sensitive data |
+|-----------------|---------------------------------------------------------------|
+| Calculation     | `M1 / M6`                                              |
+
+## Properly Configured Assets
+
+| Metric          | Percentage of assets properly configured to control access of sensitive data |
+|-----------------|------------------------------------------------------------------------------|
+| Calculation     | `M4 / M3`                                                            |
+
 
 -------------------------------------------------------------------------
 
