@@ -280,8 +280,174 @@ M4)
 | **Calculation** | `M2 / M1`                                                                     |
 
 -------------------------------------------------------------------------
+
+## 4.6: Securely Manage Enterprise Assets and Software
+
+Securely manage enterprise assets and software. Example implementations include managing configuration through version-controlled infrastructure-as-code and accessing administrative interfaces over secure network protocols, such as Secure Shell (SSH) and Hypertext Transfer Protocol Secure (HTTPS). Do not use insecure management protocols, such as Telnet (Teletype Network) and HTTP, unless operationally essential.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Network    | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV5`: Authorized software inventory
+3. `GV3`: Configuration standard
+
+### Operations
+
+1. Using `GV5`, identify and enumerate authorized management software (M1)
+
+2. Using `GV1`, identify and enumerate assets capable of supporting management software (M2)
+
+3. Using the output of Operations 1 and 2, identify and enumerate assets with authorized management software installed (M3)
+
+4. Using configuration standards `GV3` to check if management software is configured properly:
+
+    1. Enumerate assets from Operation 3 with properly configured management software (M4)
+    2. Enumerate assets from Operation 1 with improperly configured management software (M5)
+
+### Measures
+
+- M1 = Count of authorized management software
+- M2 = Count of enterprise assets capable of supporting management software
+- M3 = Count of assets with authorized management software installed
+- M4 = Count of assets with properly configured management software
+- M5 = Count of assets with improperly configured management software
+
+### Metrics
+
+#### Coverage
+
+| **Metric**      | The percentage of assets with properly configured authorized management software |
+|-----------------|-------------------------------------------------------------------------------------|
+| **Calculation** | `M4 / M2`                                                                           |
+
 -------------------------------------------------------------------------
+
+## 4.7: Manage Default Accounts on Enterprise Assets and Software
+
+Manage default accounts on enterprise assets and software, such as root, administrator, and other pre-configured vendor accounts. Example implementations can include disabling default accounts or making them unusable.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Users      | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+- Safeguard 5.2: Use Unique Passwords
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV5`: Authorized software inventory
+3. `GV20`: Unique password policy
+
+### Operations
+
+1. Use `GV5` to identify and enumerate authorized operating software, applications, and third-party software that contain default accounts (M1)
+
+2. Use `GV1` to identify and enumerate assets with software from Operation 1, installed (M2)
+
+3. For each asset identified in Operation 2, enumerate default accounts (M3)
+
+4. Check if default accounts can be disabled:
+
+    1. Enumerate accounts that are disabled (M4)
+    2. Enumerate accounts that are enabled (M5)
+
+5. If accounts cannot be disabled, ensure to change default passwords according to `GV20`: the enterprise's unique password policy:
+
+    1. Enumerate accounts with changed passwords (M6)
+
+### Measures
+
+- M1 = Count of software that uses default accounts
+- M2 = Count of assets with software installed that uses default accounts
+- M3 = Count of default accounts identified
+- M4 = Count of default accounts that have been disabled
+- M5 = Count of default accounts that are enabled
+- M6 = Count of enabled default accounts with changed passwords
+
+### Metrics
+
+#### Unusable Default Accounts
+
+| **Metric**                              | The percentage of default accounts that have been rendered unusable   |
+|-----------------------------------------|-----------------------------------------------------------------------|
+| **Calculation**                         | `M4 + M6` / `M3`                                                      |
+
 -------------------------------------------------------------------------
+
+## 4.8: Uninstall or Disable Unnecessary Services on Enterprise Assets and Software
+
+Uninstall or disable unnecessary services on enterprise assets and software, such as an unused file-sharing service, web application module, or service function.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Devices    | Protect           | 2, 3                   |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV5`: Authorized software inventory
+3. `GV3`: Configuration standard
+
+### Operations
+
+1. Use `GV5` to identify and enumerate authorized services (M1)
+
+2. Use `GV1` to identify and enumerate services on enterprise assets (M2)
+
+3. Compare outputs from Operations 1 and 2:
+
+    1. Identify and enumerate authorized services on assets (M3)
+    2. Identify and enumerate unauthorized services on assets (M4)
+
+4. For authorized services in Operation 3.2, use `GV3` to check configurations:
+
+    1. Identify and enumerate services that are configured correctly (disabled) (M5)
+    2. Identify and enumerate services that are configured improperly (enabled) (M6)
+
+### Measures
+
+- M1 = Count of authorized services
+- M2 = Count of services on enterprise assets
+- M3 = Count of authorized services on assets
+- M4 = Count of unauthorized services on assets
+- M5 = Count of unauthorized services that are disabled
+- M6 = Count of unauthorized services that are enabled
+
+### Metrics
+
+#### Compliant Services
+
+| **Metric**      | The percentage of services installed/running that are enterprise essential |
+|-----------------|---------------------------------------------------------------------------|
+| **Calculation** | `(M3 + M5) / M2`                                                          |
+
+
+#### Non-compliant Services
+
+| **Metric**      | The percentage of services installed/running that are enterprise essential |
+|-----------------|---------------------------------------------------------------------------|
+| **Calculation** | `M6 / M2`                                                          |
+
+
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
