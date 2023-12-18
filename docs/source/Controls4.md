@@ -495,7 +495,95 @@ Configure trusted DNS servers on enterprise assets. Example implementations incl
 | **Calculation** | `M3 / M2`                                                   |
 
 -------------------------------------------------------------------------
+
+## 4.10: Enforce Automatic Device Lockout on Portable End-User Devices
+
+Enforce automatic device lockout following a predetermined threshold of local failed authentication attempts on portable end-user devices, where supported. For laptops, do not allow more than 20 failed authentication attempts; for tablets and smartphones, no more than 10 failed authentication attempts. Example implementations include Microsoft InTune Device Lock and Apple Configuration Profile maxFailedAttempts.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Devices    | Respond           | 2, 3                  |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV3`: Configuration standards
+
+### Operations
+
+1. Use `GV1` to identify and enumerate all portable devices (M1)
+
+2. Use `GV3` to check failed authentication configuration for all portable devices:
+
+    1. Identify and enumerate failed authentication on laptops that are properly configured (20 failed attempts or less) (M2)
+    2. Identify and enumerate failed authentication on laptops that are not properly configured (greater than 20 failed attempts) (M3)
+    3. Identify and enumerate failed authentication on mobile devices that are properly configured (10 failed attempts or less) (M4)
+    4. Identify and enumerate failed authentication on mobile devices that are not properly configured (greater than 10 failed attempts) (M5)
+
+### Measures
+
+- M1 = Count of portable devices
+- M2 = Count of properly configured laptops
+- M3 = Count of improperly configured laptops
+- M4 = Count of properly configured mobile devices
+- M5 = Count of improperly configured mobile devices
+
+### Metrics
+
+#### Compliance of Default Lockout
+
+| **Metric**      | The percentage of portable devices with properly configured failed authentication. |
+|-----------------|--------------------------------------------------------------------------------------|
+| **Calculation** | `(M2 + M4) / M1`                                                                     |
+
 -------------------------------------------------------------------------
+
+## 4.11: Enforce Remote Wipe Capability on Portable End-User Devices
+
+Remotely wipe enterprise data from enterprise-owned portable end-user devices when deemed appropriate such as lost or stolen devices, or when an individual no longer supports the enterprise.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Devices    | Protect           | 2, 3                  |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+
+### Inputs
+
+1. `GV21`: Portable end-user devices
+2. `GV3`: Configuration standards
+
+### Operations
+
+1. Use `GV21` to identify and enumerate portable end-user devices that support remote wipe (M1)
+
+2. Use `GV3` to check configuration for remote wipe on portable devices capable of supporting as identified in Operation 1:
+
+    1. Identify and enumerate portable devices with properly configured remote wipe (M2)
+    2. Identify and enumerate portable devices with improperly configured remote wipe (M3)
+
+### Measures
+
+- M1 = Count of portable devices capable of supporting remote wipe
+- M2 = Count of properly configured portable devices
+- M3 = Count of improperly configured portable devices
+
+### Metrics
+
+#### Compliance of Remote Wipe
+
+| **Metric**      | The percentage of portable devices with properly configured remote wipe. |
+|-----------------|-------------------------------------------------------------------------|
+| **Calculation** | `M2 / M1`                                                               |
+
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
