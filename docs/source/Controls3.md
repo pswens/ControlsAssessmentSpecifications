@@ -376,14 +376,14 @@ Encrypt data on end-user devices containing sensitive data. Example implementati
 
 1. For each asset in `GV1`, identify end-user devices:
 
-   1. Enumerate the end-user devices (M1)
-   2. Use `GV5` to identify and enumerate the assets that have encryption software installed (M2)
-   3. Use `GV5` to identify and enumerate the assets without encryption software (M3)
+    1. Enumerate the end-user devices (M1)
+    2. Use `GV5` to identify and enumerate the assets that have encryption software installed (M2)
+    3. Use `GV5` to identify and enumerate the assets without encryption software (M3)
 
 2. For each encryption software installed on assets (M2), use `GV3` to determine whether the software is properly configured:
 
-   1. Enumerate the encryption software that is properly configured (M4)
-   2. Enumerate the encryption software that is improperly configured (M5)
+    1. Enumerate the encryption software that is properly configured (M4)
+    2. Enumerate the encryption software that is improperly configured (M5)
 
 ### Measures
 
