@@ -19,18 +19,18 @@ Establish and maintain a secure configuration process for enterprise assets (end
 |------------|-------------------|-----------------------|
 | Applications | Protect | 1, 2, 3 |
 
-## Dependencies
+### Dependencies
 
 - Safeguard 2.1: Establish and Maintain a Software Inventory
 
-## Inputs
+### Inputs
 
 1. `GV2`: Authorized software inventory
 2. `GV1`: Enterprise asset inventory
 3. `GV3`: Configuration Standard: This should include any enterprise-approved deviations from industry-standard baselines such as CIS benchmarks, DISA Security Technical Implementation Guides (STIGs), or U.S. government configuration baselines (USGCB).
 4. Date of last review and update of configuration standard
 
-## Operations
+### Operations
 
 1. Identify whether Input 2 exists:
 
@@ -48,7 +48,7 @@ Establish and maintain a secure configuration process for enterprise assets (end
 
 5. Compare the current date to the date provided in Input 4. Note the timeframe in months (M6)
 
-## Measures
+### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of applicable enterprise assets
@@ -58,17 +58,16 @@ Establish and maintain a secure configuration process for enterprise assets (end
     standard
 -   M6 = Timeframe since last review and update in months
 
-## Metrics
+### Metrics
 
 - If M1 is 0, this safeguard receives a failing score. The other metrics don't apply.
 - If M6 is greater than twelve, this safeguard is measured at 0 and receives a failing score. The other metrics don't apply.
 
-## Standard Configuration Coverage
+#### Standard Configuration Coverage
 
 | **Metric**      | The percentage of authorized software with secure configuration standards documented and maintained. |
-|:---------------:|:--------------------------------------------------------------------------------------------------:|
-| **Calculation** | `M4 / M3`                                                                                        |
-
+|-----------------|----------------------------------------------------------------------------------------------------|
+| **Calculation** | `M4 / M3`                                                                                          |
 
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
