@@ -189,16 +189,16 @@ Configure data access control lists based on a user’s need to know. Apply data
 
 ### Operations
 
-1. Use the data management process, specifically :code:`GV13` and :code:`GV14`, as guidelines to map user accounts to sensitive data in :code:`GV12`:
-   
-   1. Identify and enumerate sensitive data correctly mapped to user accounts (M1)
-   2. Identify and enumerate sensitive data not correctly mapped to user accounts (M2)
+1. Use the data management process, specifically `GV13` and `GV14`, as guidelines to map user accounts to sensitive data in `GV12`:
 
-2. For each enterprise asset storing sensitive data, as outlined by :code:`GV12`:
-   
-   1. Identify and enumerate all assets storing sensitive data (M3)
-   2. Use `GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
-   3. Use `GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
+    1. Identify and enumerate sensitive data correctly mapped to user accounts (M1)
+    2. Identify and enumerate sensitive data not correctly mapped to user accounts (M2)
+
+2. For each enterprise asset storing sensitive data, as outlined by `GV12`:
+
+    1. Identify and enumerate all assets storing sensitive data (M3)
+    2. Use `GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
+    3. Use `GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
 
 ### Measures
 
@@ -251,13 +251,16 @@ Retain data according to the enterprise’s data management process. Data retent
 
 ### Operations
 
-1. For each sensitive data type covered in `GV11`,
-   1. Enumerate the number of types of sensitivity (`GV17`: M1), at a minimum one to differentiate sensitive data from other data
-   2. Identify and enumerate if each type has a minimum retention time (M2) as defined by `GV15`
-   3. Identify and enumerate if each type has a maximum retention time (M3) as defined by `GV15`
-2. Using the output of Operation 1.1 and 1.2, check the data inventory `GV12` for enforcement of data retention
-   1. Identify and enumerate items in the inventory that comply with retention timelines (M4)
-   2. Identify and enumerate items in the inventory that do not comply with retention timelines (M5)
+1. For each sensitive data type covered in `GV11`:
+
+    1. Enumerate the number of types of sensitivity (`GV17`: M1), at a minimum one to differentiate sensitive data from other data
+    2. Identify and enumerate if each type has a minimum retention time (M2) as defined by `GV15`
+    3. Identify and enumerate if each type has a maximum retention time (M3) as defined by `GV15`
+
+2. Using the output of Operation 1.1 and 1.2, check the data inventory `GV12` for enforcement of data retention:
+
+    1. Identify and enumerate items in the inventory that comply with retention timelines (M4)
+    2. Identify and enumerate items in the inventory that do not comply with retention timelines (M5)
 
 ### Measures
 
@@ -313,10 +316,13 @@ Securely dispose of data as outlined in the enterprise’s data management proce
 
 ### Operations
 
-1. For each sensitive data type covered in `GV17`,
-   1. Identify and enumerate each type has a disposal method and process as defined by `GV16` (M2)
+1. For each sensitive data type covered in `GV17`:
+
+   1. Identify and enumerate each type that has a disposal method and process as defined by `GV16` (M2)
    2. Identify and enumerate each type that does not have a disposal method and process as defined by `GV16` (M3)
-2. For each item in `GV12`, determine whether the data complies with the disposal requirements outlined in `GV17`
+
+2. For each item in `GV12`, determine whether the data complies with the disposal requirements outlined in `GV17`:
+
    1. Enumerate data that does not comply with disposal requirements (M4)
    2. Enumerate data that complies with disposal requirements (M5)
 
@@ -369,11 +375,14 @@ Encrypt data on end-user devices containing sensitive data. Example implementati
 
 ### Operations
 
-1. For each asset in `GV1`, identify end-user devices
+1. For each asset in `GV1`, identify end-user devices:
+
    1. Enumerate the end-user devices (M1)
    2. Use `GV5` to identify and enumerate the assets that have encryption software installed (M2)
    3. Use `GV5` to identify and enumerate the assets without encryption software (M3)
-2. For each encryption software installed on assets (M2), use `GV3` to determine whether the software is properly configured
+
+2. For each encryption software installed on assets (M2), use `GV3` to determine whether the software is properly configured:
+
    1. Enumerate the encryption software that is properly configured (M4)
    2. Enumerate the encryption software that is improperly configured (M5)
 
@@ -423,16 +432,22 @@ Establish and maintain an overall data classification scheme for the enterprise.
 
 ### Operations
 
-1. Check if the enterprise has a data classification scheme (Input 1).
+1. Check if the enterprise has a data classification scheme (Input 1):
+
    1. If Input 1 exists, M = 1
    2. Otherwise M1 = 0
-2. Using `GV17` determine if the enterprise has a way to categorize the type of data within the classification scheme
+
+2. Using `GV17`, determine if the enterprise has a way to categorize the type of data within the classification scheme:
+
    1. Enumerate the sensitivity types that are included in the classification scheme (M2)
    2. Enumerate the sensitivity types that are not included in the classification scheme (M3)
-3. Compare `GV12` and Input 1
+
+3. Compare `GV12` and Input 1:
+
    1. Identify and enumerate data that contains an accurate classification per the classification scheme (M4)
    2. Identify and enumerate data that does not contain a classification or contains an inaccurate classification per the classification scheme (M5)
-4. Compare the current date to that provided in Input 4. Note the timeframe in months. (M8)
+
+4. Compare the current date to that provided in Input 4. Note the timeframe in months (M8)
 
 ### Measures
 
@@ -484,15 +499,21 @@ Data flow documentation includes service provider data flows and should be based
 
 ### Operations
 
-1. Check if the enterprise has data flow documentation (Input 1).
-   1. If Input 1 exists M = 1
+1. Check if the enterprise has data flow documentation (Input 1):
+
+   1. If Input 1 exists, M = 1
    2. Otherwise M1 = 0
-2. Using `GV12` and identify data that flows to external enterprises
+
+2. Using `GV12`, identify data that flows to external enterprises:
+
    1. Enumerate the data that flows to external enterprises (M2)
-3. Compare Input 1 and the output of Operation 2
+
+3. Compare Input 1 and the output of Operation 2:
+
    1. Enumerate data flows from Operation 2 that are included in Input 1 (M3)
    2. Enumerate data flows from Operation 2 that are not included in Input 1 (M4)
-4. Compare the current date to that provided in Input 3.  Note the timeframe in months (M5)
+
+4. Compare the current date to that provided in Input 3. Note the timeframe in months (M5)
 
 ### Measures
 
@@ -542,11 +563,15 @@ Encrypt data on removable media.
 
 ### Operations
 
-1. Use `GV1` to identify and enumerate assets authorized to support removable media (M1)
-2. Use `GV5` to identify encryption software installed on assets identified in Operation 1 (M1)
+1. Use `GV1` to identify and enumerate assets authorized to support removable media (M1):
+
+2. Use `GV5` to identify encryption software installed on assets identified in Operation 1 (M1):
+
    1. Enumerate the number of assets with encryption software installed (M2)
    2. Enumerate the number of assets without encryption software installed (M3)
-3. For assets identified in Operation 2.1, use `GV3` to check configurations of encryption software
+
+3. For assets identified in Operation 2.1, use `GV3` to check configurations of encryption software:
+
    1. Enumerate assets that have properly configured encryption software (M4)
    2. Enumerate assets that have improperly configured encryption software (M5)
 
@@ -589,7 +614,9 @@ Encrypt sensitive data in transit. Example implementations can include, Transpor
 ### Operations
 
 1. For each item in `GV12`, identify the means and components for encrypting data in transit.
-2. Compare the output of Operation 1 with `GV5` to check appropriate approved configurations
+
+2. Compare the output of Operation 1 with `GV5` to check appropriate approved configurations:
+
    1. Enumerate the data items in `GV12` that are properly configured (M2)
    2. Enumerate the data items in `GV12` that are improperly configured (M3)
 
