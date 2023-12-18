@@ -12,6 +12,7 @@ nav:
         - 'CIS Control 2: Inventory and Control of Software Assets': source/Controls2.md
         - 'CIS Control 3: Data Protection': source/Controls3.md
         - 'CIS Control 4: Secure Configuration of Enterprise Assets and Software': source/Controls4.md
+        - 'CIS Control 5: Account Management': source/Controls5.md
         
 
 theme:
