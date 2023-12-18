@@ -479,16 +479,16 @@ Configure trusted DNS servers on enterprise assets. Example implementations incl
     1. Identify and enumerate assets with DNS servers that are properly configured (M3)
     2. Identify and enumerate assets with DNS servers that are improperly configured (M4)
 
-## Measures
+### Measures
 
 - M1 = Count of authorized DNS servers
 - M2 = Count of enterprise assets configured for DNS servers
 - M3 = Count of assets with properly configured DNS servers
 - M4 = Count of assets with improperly configured DNS servers
 
-## Metrics
+### Metrics
 
-### Coverage
+#### Coverage
 
 | **Metric**      | The percentage of assets with properly configured DNS servers |
 |-----------------|-------------------------------------------------------------|
