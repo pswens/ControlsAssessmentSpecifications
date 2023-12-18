@@ -67,7 +67,6 @@ Establish and maintain a data management process. In the process, address data s
    4. Data retention limits based on the sensitivity of data. If so, M4 = 1. Otherwise, M4 = 0. (`GV15`)
    5. Disposal requirements based on the sensitivity of data. If so, M5 = 1. Otherwise, M5 = 0. (`GV16`)
 
-
 ### Measures
 
 -   M1 = Does the process address data sensitivity
