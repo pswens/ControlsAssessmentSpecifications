@@ -433,20 +433,21 @@ Establish and maintain an overall data classification scheme for the enterprise.
 
 1. Check if the enterprise has a data classification scheme (Input 1):
 
-   1. If Input 1 exists, M = 1
-   2. Otherwise M1 = 0
+    1. If Input 1 exists, M = 1
+    2. Otherwise M1 = 0
 
 2. Using `GV17`, determine if the enterprise has a way to categorize the type of data within the classification scheme:
 
-   1. Enumerate the sensitivity types that are included in the classification scheme (M2)
-   2. Enumerate the sensitivity types that are not included in the classification scheme (M3)
+    1. Enumerate the sensitivity types that are included in the classification scheme (M2)
+    2. Enumerate the sensitivity types that are not included in the classification scheme (M3)
 
 3. Compare `GV12` and Input 1:
 
-   1. Identify and enumerate data that contains an accurate classification per the classification scheme (M4)
-   2. Identify and enumerate data that does not contain a classification or contains an inaccurate classification per the classification scheme (M5)
+    1. Identify and enumerate data that contains an accurate classification per the classification scheme (M4)
+    2. Identify and enumerate data that does not contain a classification or contains an inaccurate classification per the classification scheme (M5)
 
 4. Compare the current date to that provided in Input 4. Note the timeframe in months (M8)
+
 
 ### Measures
 
@@ -500,17 +501,17 @@ Data flow documentation includes service provider data flows and should be based
 
 1. Check if the enterprise has data flow documentation (Input 1):
 
-   1. If Input 1 exists, M = 1
-   2. Otherwise M1 = 0
+    1. If Input 1 exists, M = 1
+    2. Otherwise M1 = 0
 
 2. Using `GV12`, identify data that flows to external enterprises:
 
-   1. Enumerate the data that flows to external enterprises (M2)
+    1. Enumerate the data that flows to external enterprises (M2)
 
 3. Compare Input 1 and the output of Operation 2:
 
-   1. Enumerate data flows from Operation 2 that are included in Input 1 (M3)
-   2. Enumerate data flows from Operation 2 that are not included in Input 1 (M4)
+    1. Enumerate data flows from Operation 2 that are included in Input 1 (M3)
+    2. Enumerate data flows from Operation 2 that are not included in Input 1 (M4)
 
 4. Compare the current date to that provided in Input 3. Note the timeframe in months (M5)
 
@@ -562,17 +563,17 @@ Encrypt data on removable media.
 
 ### Operations
 
-1. Use `GV1` to identify and enumerate assets authorized to support removable media (M1):
+1. Use `GV1` to identify and enumerate assets authorized to support removable media (M1)
 
 2. Use `GV5` to identify encryption software installed on assets identified in Operation 1 (M1):
 
-   1. Enumerate the number of assets with encryption software installed (M2)
-   2. Enumerate the number of assets without encryption software installed (M3)
+    1. Enumerate the number of assets with encryption software installed (M2)
+    2. Enumerate the number of assets without encryption software installed (M3)
 
 3. For assets identified in Operation 2.1, use `GV3` to check configurations of encryption software:
 
-   1. Enumerate assets that have properly configured encryption software (M4)
-   2. Enumerate assets that have improperly configured encryption software (M5)
+    1. Enumerate assets that have properly configured encryption software (M4)
+    2. Enumerate assets that have improperly configured encryption software (M5)
 
 ### Measures
 
@@ -616,8 +617,8 @@ Encrypt sensitive data in transit. Example implementations can include, Transpor
 
 2. Compare the output of Operation 1 with `GV5` to check appropriate approved configurations:
 
-   1. Enumerate the data items in `GV12` that are properly configured (M2)
-   2. Enumerate the data items in `GV12` that are improperly configured (M3)
+    1. Enumerate the data items in `GV12` that are properly configured (M2)
+    2. Enumerate the data items in `GV12` that are improperly configured (M3)
 
 ### Measures
 
