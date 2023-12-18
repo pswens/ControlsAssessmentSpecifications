@@ -189,10 +189,13 @@ Configure data access control lists based on a user’s need to know. Apply data
 
 ### Operations
 
-1. Use the data management process, specifically :code:`GV13` and :code:`GV14`, as guidelines to map user accounts to sensitive data in :code:`GV12`.
+1. Use the data management process, specifically :code:`GV13` and :code:`GV14`, as guidelines to map user accounts to sensitive data in :code:`GV12`:
+   
    1. Identify and enumerate sensitive data correctly mapped to user accounts (M1)
    2. Identify and enumerate sensitive data not correctly mapped to user accounts (M2)
-2. For each enterprise asset storing sensitive data, as outlined by :code:`GV12`,
+
+2. For each enterprise asset storing sensitive data, as outlined by :code:`GV12`:
+   
    1. Identify and enumerate all assets storing sensitive data (M3)
    2. Use `GV3` to check and enumerate assets that are properly configured to only allow users as identified in Operation 1 (M4)
    3. Use `GV3` to check and enumerate assets that are improperly configured to only allow users as identified in Operation 1 (M5)
