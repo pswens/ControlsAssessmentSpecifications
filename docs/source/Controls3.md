@@ -658,10 +658,13 @@ Encrypt sensitive data at rest on servers, applications, and databases containin
 ### Operations
 
 1. Use `GV5` to identify and enumerate all encryption tools requiring secondary authentication systems (M1)
+
 2. Use `GV12` and `GV1` to identify and enumerate all enterprise assets storing sensitive data (`GV19`: M2)
-3. Compare the output of Operation 1 and Operation 2
-   1. Identify and enumerate assets with at least one encryption tool from M1 installed (M4)
-   2. Identify and enumerate assets without at least one encryption tool from M1 installed (M5)
+
+3. Compare the output of Operation 1 and Operation 2:
+
+    1. Identify and enumerate assets with at least one encryption tool from M1 installed (M4)
+    2. Identify and enumerate assets without at least one encryption tool from M1 installed (M5)
 
 ### Measures
 
