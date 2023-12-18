@@ -59,10 +59,13 @@ Establish and maintain a data management process. In the process, address data s
 
 ### Operations
 
-1. Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process:
+1. Review `GV10` to determine if, at a minimum, it includes:
 
-    1. Identify and enumerate items in the data set that have a mapping (M2)
-    2. Identify and enumerate items in the data set that do not have a mapping (M3)
+   1. Addressing data sensitivity. If so, M1 = 1. Otherwise M1 = 0. (`GV11`)
+   2. Captures data owner. If so, M2 = 1. Otherwise M2 = 0. (`GV13`)
+   3. Handling of data. If so, M3 = 1. Otherwise, M3 = 0. (`GV14`)
+   4. Data retention limits based on the sensitivity of data. If so, M4 = 1. Otherwise, M4 = 0. (`GV15`)
+   5. Disposal requirements based on the sensitivity of data. If so, M5 = 1. Otherwise, M5 = 0. (`GV16`)
 
 
 ### Measures
@@ -110,16 +113,23 @@ Establish and maintain a data inventory based on the enterprise’s data managem
 
 ### Operations
 
-1. Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process
-   1. Identify and enumerate items in the data set that have a mapping (M2)
-   2. Identify and enumerate items in the data set that do not have a mapping (M3)
-2. Use `GV1` and M2 from Operation 1 to map the data set to assets storing data
-   1. Identify and enumerate items that have complete and correct mapping to asset and sensitivity (M4)
-   2. Identify and enumerate items that have partial mapping to sensitivity (M5)
-3. Use `GV1` and M3 from Operation 2 to map the data set, without sensitivity mapping, to assets storing data
-   1. Identify and enumerate items that have partial mapping to assets (M6)
-   2. Identify and enumerate items that have no mapping at all (M7)
-4. Compare the current date to Input 4 and capture the timeframe in months (M8)
+1. Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process:
+
+    1. Identify and enumerate items in the data set that have a mapping (M2)
+    2. Identify and enumerate items in the data set that do not have a mapping (M3)
+
+2. Use `GV1` and M2 from Operation 1 to map the data set to assets storing data:
+
+    1. Identify and enumerate items that have complete and correct mapping to asset and sensitivity (M4)
+    2. Identify and enumerate items that have partial mapping to sensitivity (M5)
+
+3. Use: code:[GV1]{.title-ref} and M3 from Operation 2 to map the data set, without sensitivity mapping, to assets storing data:
+
+    1. Identify and enumerate items that have partial mapping to assets (M6)
+    2. Identify and enumerate items that have no mapping at all (M7)
+
+4. Compare current date to Input 4 and capture timeframe in months (M8)
+
 
 ### Measures
 
