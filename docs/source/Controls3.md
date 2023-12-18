@@ -758,13 +758,17 @@ Implement an automated tool, such as a host-based Data Loss Prevention (DLP) too
 
 ### Operations
 
-1. Use `GV5` to identify and enumerate all data loss prevention software
-2. Compare `GV18` and the output of Operation 1
-   1. Identify and enumerate each asset in `GV18` with data loss prevention software installed (M2)
-   2. Identify and enumerate each asset in `GV18` without data loss prevention software installed (M3)
-3. For assets with data loss prevention installed from Operation 2.1, check `GV3` for configuration information
-   1. Identify and enumerate assets with properly configured data loss prevention software (M4)
-   2. Identify and enumerate assets with improperly configured data loss prevention software (M5)
+1. Use `GV5` to identify and enumerate all data loss prevention software.
+
+2. Compare `GV18` and the output of Operation 1:
+
+    1. Identify and enumerate each asset in `GV18` with data loss prevention software installed (M2)
+    2. Identify and enumerate each asset in `GV18` without data loss prevention software installed (M3)
+
+3. For assets with data loss prevention installed from Operation 2.1, check `GV3` for configuration information:
+
+    1. Identify and enumerate assets with properly configured data loss prevention software (M4)
+    2. Identify and enumerate assets with improperly configured data loss prevention software (M5)
 
 ### Measures
 
@@ -807,13 +811,17 @@ Log sensitive data access, including modification and disposal.
 
 ### Operations
 
-1. Using `GV3` identify authorized logging software
-2. For each asset in `GV19`, use the output from Operation 1
-   1. Identify and enumerate assets with logging software installed (M2)
-   2. Identify and enumerate assets that do not have logging software installed (M3)
-3. For logging software installed, check configuration using `GV3`
-   1. Identify and enumerate software that is properly configured (M4)
-   2. Identify and enumerate software that is improperly configured (M5)
+1. Using `GV3`, identify authorized logging software.
+
+2. For each asset in `GV19`, use the output from Operation 1:
+
+    1. Identify and enumerate assets with logging software installed (M2)
+    2. Identify and enumerate assets that do not have logging software installed (M3)
+
+3. For logging software installed, check configuration using `GV3`:
+
+    1. Identify and enumerate software that is properly configured (M4)
+    2. Identify and enumerate software that is improperly configured (M5)
 
 ### Measures
 
