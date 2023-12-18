@@ -317,13 +317,13 @@ Securely dispose of data as outlined in the enterprise’s data management proce
 
 1. For each sensitive data type covered in `GV17`:
 
-   1. Identify and enumerate each type that has a disposal method and process as defined by `GV16` (M2)
-   2. Identify and enumerate each type that does not have a disposal method and process as defined by `GV16` (M3)
+    1. Identify and enumerate each type that has a disposal method and process as defined by `GV16` (M2)
+    2. Identify and enumerate each type that does not have a disposal method and process as defined by `GV16` (M3)
 
 2. For each item in `GV12`, determine whether the data complies with the disposal requirements outlined in `GV17`:
 
-   1. Enumerate data that does not comply with disposal requirements (M4)
-   2. Enumerate data that complies with disposal requirements (M5)
+    1. Enumerate data that does not comply with disposal requirements (M4)
+    2. Enumerate data that complies with disposal requirements (M5)
 
 ### Measures
 
