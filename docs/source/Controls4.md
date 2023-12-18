@@ -34,17 +34,17 @@ Establish and maintain a secure configuration process for enterprise assets (end
 
 1. Identify whether Input 2 exists:
 
-   1. If it exists, M1 = 1
-   2. If it does not exist, M1 = 0
+    1. If it exists, M1 = 1
+    2. If it does not exist, M1 = 0
 
-2. Identify and enumerate end-user devices, including portable and mobile, non-computing/IoT devices and servers in `GV1` (M2).
+2. Identify and enumerate end-user devices, including portable and mobile, non-computing/IoT devices, and servers in `GV1` (M2)
 
 3. Using the output of Operation 2 (M2), identify and enumerate the software installed on the assets using `GV2` (M3)
 
 4. For each software identified in Operation 3 (M3):
 
-   1. Enumerate software that is listed in the configuration standard `GV3` (M4)
-   2. Enumerate software that is not listed in the configuration standard `GV3` (M5)
+    1. Enumerate software that is listed in the configuration standard `GV3` (M4)
+    2. Enumerate software that is not listed in the configuration standard `GV3` (M5)
 
 5. Compare the current date to the date provided in Input 4. Note the timeframe in months (M6)
 
