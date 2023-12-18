@@ -59,14 +59,13 @@ Establish and maintain a data management process. In the process, address data s
 
 ### Operations
 
-1.  
+1.
 
-    Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process
+    Use `GV11` to map Input 2 to sensitivity per the guidance in the data management process:
 
-    1.  Identify and enumerate items in the data set that have a
-            mapping (M2)
-    2.  Identify and enumerate items in the data set that do not
-            have a mapping (M3)
+    1. Identify and enumerate items in the data set that have a mapping (M2)
+    2. Identify and enumerate items in the data set that do not have a mapping (M3)
+
 
 ### Measures
 
