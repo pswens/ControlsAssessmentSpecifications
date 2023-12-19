@@ -150,7 +150,7 @@ Use unique passwords for all enterprise assets. Best practice implementation inc
 
    1. If guidance is included, M4 = 1
 
-      # Does guidance, at a minimum, require an eight-character password:
+      1. Does guidance, at a minimum, require an eight-character password:
 
       1. If password guidance is eight characters or longer, M5 = 1
       2. Otherwise M5 = 0
