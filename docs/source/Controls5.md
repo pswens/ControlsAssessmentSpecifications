@@ -245,6 +245,184 @@ Delete or disable any dormant accounts after a period of 45 days of inactivity, 
 | **Calculation** | `M6 / M3`                                                          |
 
 ---------------------------------------------------------------------------------
+
+## 5.4: Restrict Administrator Privileges to Dedicated Administrator Accounts
+
+Restrict administrator privileges to dedicated administrator accounts on enterprise assets. Conduct general computing activities, such as internet browsing, email, and productivity suite use, from the user’s primary, non-privileged account.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Users      | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 5.1: Establish and Maintain an Inventory of Accounts
+
+### Inputs
+
+1. `GV22`: Inventory of accounts
+2. List of users identified as administrators
+
+### Assumptions
+
+- For the purpose of this control, it is assumed that users identified as administrators that have active administrative and non-administrative accounts have properly dedicated accounts for administrative privileges.
+
+### Operations
+
+1. Using `GV22` and Input 2:
+   
+    1. Identify and enumerate users identified as administrators with active administrator accounts (M1).
+    2. Identify and enumerate users identified as administrators without active administrator accounts (M2).
+    3. Identify and enumerate users not identified as administrators with active administrator accounts (M3).
+
+2. Using `GV22` and the output of Operation 1.1:
+   
+    1. Identify and enumerate users identified as administrators that have an active non-administrative user account (M4).
+    2. Identify and enumerate users identified as administrators that do not have an active non-administrative user account (M5).
+
+### Measures
+
+- M1 = Count of authorized administrative users with active administrator accounts
+- M2 = Count of authorized administrative users without active administrator accounts
+- M3 = Count of non-administrative users with active administrator accounts
+- M4 = Count of authorized administrative users with an active administrative and non-administrative account
+- M5 = Count of authorized administrative users without an active administrative and non-administrative account
+- M6 = Count of Input 2
+
+### Metrics
+
+#### Administrative User Accounts
+
+| **Metric**      | The percentage of administrative users with both an administrative account and a non-administrative account. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M4 / M6`                                                          |
+
+#### Unauthorized Administrative Accounts
+
+| **Metric**      | The percentage of unauthorized administrative accounts. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M3 / (M1 + M3)`                                                          |
+
 ---------------------------------------------------------------------------------
+
+## 5.5: Establish and Maintain an Inventory of Service Accounts
+
+Establish and maintain an inventory of service accounts. The inventory, at a minimum, must contain the department owner, review date, and purpose. Perform service account reviews to validate that all active accounts are authorized on a recurring schedule at a minimum quarterly or more frequently.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Users      | Identify          | 2, 3                  |
+
+### Dependencies
+
+- Safeguard 6.6: Establish and Maintain an Inventory of Authentication and Authorization Systems
+
+### Inputs
+
+1. `GV23`: Authentication and Authorization System Inventory 
+2. Inventory of service accounts
+3. Date of last review of the inventory of service accounts
+
+### Operations
+
+1. Check if the enterprise maintains an inventory of service accounts (Input 2):
+
+   1.  If the inventory exists, set M1 = 1.
+   2.  If the inventory does not exist, set M1 = 0.
+
+2. Using the inventory of accounts (Input 2), determine if the inventory captures the following elements: department owner, review date, and purpose:
+
+   1. Each element is assigned a value of 1 if it exists and 0 if it does not.
+   2. Total the number of elements that exist and assign it to M3.
+
+3. Using Input 2, check each account for elements: department owner, review date, and purpose:
+
+   1. Identify and enumerate accounts with all elements (M4).
+   2. Identify and enumerate accounts missing or with incomplete elements (M5).
+
+4. Use `GV23` to identify authentication systems or other software that manages service accounts.
+
+5. Using the output of Operation 4, enumerate all current service accounts throughout the enterprise (M6).
+
+6. Compare the output of Operation 5 with Input 2:
+
+   -  Identify and enumerate accounts that are supposed to be active/enabled (M7).
+   -  Identify and enumerate accounts that are supposed to be disabled/removed (M8).
+
+7. Compare the current date to the date provided in Input 3 and enumerate the timeframe in months (M9).
+
+
+### Measures
+
+- M1 = Does the account inventory exist (Output of Operation 1)
+- M2 = Count of accounts in Input 2
+- M3 = Count of elements provided in inventory
+- M4 = Count of accounts in inventory with complete information
+- M5 = Count of accounts in inventory with missing or incomplete information
+- M6 = Count of current service accounts identified through Operation 5
+- M7 = Count of authorized accounts
+- M8 = Count of unauthorized accounts
+- M9 = Timeframe of last update in months
+
+### Metrics
+
+If M1 is 0, this safeguard receives a failing score and other metrics don't apply.
+If M9 is greater than three, this safeguard is measured at a 0 and receives a failing score. The other metrics don't apply.
+
+#### Completeness of Inventory
+
+| **Metric**      | The percentage of minimum elements included in the inventory. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M3 / 4`                                                         |
+
+| **Metric**      | The percentage of accounts with complete information. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M4 / 2`                                                         |
+
+#### Accuracy of Inventory
+
+| **Metric**      | The percentage of accurately listed accounts in the inventory. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M8 / M6`                                                        |
+
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
+
+## 5.6: Centralize Account Management
+
+Centralize account management through a directory or identity service.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Users      | Protect           | 2, 3                  |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 2.1: Establish and Maintain a Software Inventory
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+
+### Operations
+
+1. Using `GV1`, identify and enumerate centralized authentication points (M1).
+
+2. For each centralized authentication point identified in Operation 1, determine whether it is necessary or can be consolidated:
+
+   1. Identify and enumerate authentication points that are unnecessary or can be consolidated (M2).
+   2. Identify and enumerate authentication points that are necessary and cannot be consolidated (M3).
+
+### Measures
+
+- M1 = Count of centralized authentication points in the enterprise
+- M2 = Count of unnecessary centralized authentication points
+- M3 = Count of necessary centralized authentication points
+
+### Metrics
+
+#### Coverage
+
+| **Metric**      | Percentage of properly centralized authentication points. |
+|-----------------|--------------------------------------------------------------------|
+| **Calculation** | `M3 / M1`                                                        |
