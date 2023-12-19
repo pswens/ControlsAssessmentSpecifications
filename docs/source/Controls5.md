@@ -326,31 +326,29 @@ Establish and maintain an inventory of service accounts. The inventory, at a min
 ### Operations
 
 1. Check if the enterprise maintains an inventory of service accounts (Input 2):
-
-   1.  If the inventory exists, set M1 = 1.
-   2.  If the inventory does not exist, set M1 = 0.
+   
+    1. If the inventory exists, set M1 = 1.
+    2. If the inventory does not exist, set M1 = 0.
 
 2. Using the inventory of accounts (Input 2), determine if the inventory captures the following elements: department owner, review date, and purpose:
-
-   1. Each element is assigned a value of 1 if it exists and 0 if it does not.
-   2. Total the number of elements that exist and assign it to M3.
+   
+    1. Each element is assigned a value of 1 if it exists and 0 if it does not. Total the number of elements that exist (M3).
 
 3. Using Input 2, check each account for elements: department owner, review date, and purpose:
-
-   1. Identify and enumerate accounts with all elements (M4).
-   2. Identify and enumerate accounts missing or with incomplete elements (M5).
+   
+    1. Identify and enumerate accounts with all elements (M4).
+    2. Identify and enumerate accounts missing or with incomplete elements (M5).
 
 4. Use `GV23` to identify authentication systems or other software that manages service accounts.
 
 5. Using the output of Operation 4, enumerate all current service accounts throughout the enterprise (M6).
 
 6. Compare the output of Operation 5 with Input 2:
-
-   -  Identify and enumerate accounts that are supposed to be active/enabled (M7).
-   -  Identify and enumerate accounts that are supposed to be disabled/removed (M8).
+   
+    1. Identify and enumerate accounts that are supposed to be active/enabled (M7).
+    2. Identify and enumerate accounts that are supposed to be disabled/removed (M8).
 
 7. Compare the current date to the date provided in Input 3 and enumerate the timeframe in months (M9).
-
 
 ### Measures
 
@@ -406,12 +404,13 @@ Centralize account management through a directory or identity service.
 
 ### Operations
 
-1. Using `GV1`, identify and enumerate centralized authentication points (M1).
+1. Using `GV1` identify and enumerate centralized authentication points (M1)
 
 2. For each centralized authentication point identified in Operation 1, determine whether it is necessary or can be consolidated:
 
-   1. Identify and enumerate authentication points that are unnecessary or can be consolidated (M2).
-   2. Identify and enumerate authentication points that are necessary and cannot be consolidated (M3).
+    1. Identify and enumerate authentication points that are unnecessary or can be consolidated (M2)
+    2. Identify and enumerate authentication points that are necessary and cannot be consolidated (M3)
+
 
 ### Measures
 
