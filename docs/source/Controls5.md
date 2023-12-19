@@ -53,27 +53,23 @@ Establish and maintain an inventory of all accounts managed in the enterprise. T
 ### Operations
 
 1. Check if the enterprise maintains an inventory of user and administrative accounts (Input 2):
-
-   1. If the inventory exists, M1 = 1
-   2. If the inventory does not exist, M1 = 0
+    1. If the inventory exists, M1 = 1
+    2. If the inventory does not exist, M1 = 0
 
 2. Using the inventory of accounts `GV22`, determine if the inventory captures the following elements: person's name, username, start/stop dates, and department:
-
-   1. Each element is assigned a value of 1 if it exists and 0 if it does not. Total the number of elements that exist. (M3)
+    1. Each element is assigned a value of 1 if it exists and 0 if it does not. Total the number of elements that exist (M3).
 
 3. Using `GV22`, check each account for elements: person's name, username, start/stop dates, and department:
-
-   1. Identify and enumerate accounts with all elements (M4)
-   2. Identify and enumerate accounts missing or with incomplete elements (M5)
+    1. Identify and enumerate accounts with all elements (M4)
+    2. Identify and enumerate accounts missing or with incomplete elements (M5)
 
 4. Use `GV5` to identify authentication systems or other software that manages accounts `GV23`.
 
 5. Using the output of Operation 4, enumerate all current user and administrative accounts throughout the enterprise (M6)
 
 6. Compare the output of Operation 5 with `GV22`:
-
-   1. Identify and enumerate accounts that are supposed to be active/enabled (M7)
-   2. Identify and enumerate accounts that are supposed to be disabled/removed (M8)
+    1. Identify and enumerate accounts that are supposed to be active/enabled (M7)
+    2. Identify and enumerate accounts that are supposed to be disabled/removed (M8)
 
 7. Compare the current date to the date provided in Input 3 and enumerate the timeframe in months (M9)
 
