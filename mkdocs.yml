@@ -15,6 +15,5 @@ nav:
         - 'CIS Control 5: Account Management': source/Controls5.md
         - 'CIS Control 6: CIS Control 6: Access Control Management': source/Controls6.md
         
-
 theme:
     name: readthedocs
