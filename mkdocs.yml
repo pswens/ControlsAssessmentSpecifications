@@ -15,6 +15,7 @@ nav:
         - 'CIS Control 5: Account Management': source/Controls5.md
         - 'CIS Control 6: Access Control Management': source/Controls6.md
         - 'CIS Control 7: Continuous Vulnerability Management': source/Controls7.md
+        - 'CIS Control 8: Audit Log Management': source/Controls8.md
         
 theme:
     name: readthedocs
