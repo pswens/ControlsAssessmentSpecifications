@@ -14,6 +14,7 @@ nav:
         - 'CIS Control 4: Secure Configuration of Enterprise Assets and Software': source/Controls4.md
         - 'CIS Control 5: Account Management': source/Controls5.md
         - 'CIS Control 6: Access Control Management': source/Controls6.md
+        - 'CIS Control 7: Continuous Vulnerability Management': source/Controls7.md
         
 theme:
     name: readthedocs
