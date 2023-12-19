@@ -393,15 +393,15 @@ Define and maintain role-based access control by determining and documenting the
 
 1. Determine whether the enterprise has a process for assigning role-based access control:
    
-   1. If the process exists, M1 = 1.
-   2. If the process does not exist, M1 = 1.
-     
+    1. If the process exists, M1 = 1
+    2. If the process does not exist, M1 = 0
+
 2. Use `GV22` and check if each account is assigned a role or group as outlined by the role-based access control process:
    
-   1. Identify and enumerate accounts that are assigned a role or group (M3).
-   2. Identify and enumerate accounts that are not assigned a role or group (M4).
-     
-3. Compare the date in Input 3 to the current date and capture the timeframe in months (M5).
+    1. Identify and enumerate accounts that are assigned a role or group (M3)
+    2. Identify and enumerate accounts that are not assigned a role or group (M4)
+
+3. Compare the date in Input 3 to the current date and capture the timeframe in months (M5)
 
 ### Measures
 
