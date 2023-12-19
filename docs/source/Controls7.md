@@ -427,15 +427,17 @@ Perform automated vulnerability scans of externally exposed enterprise assets us
 
 ### Operations
 
-1. Use the `GV1` enterprise asset inventory to identify and enumerate all external assets (M2)
+1.  Use the `GV1` enterprise asset inventory to identify and enumerate all external assets (M2)
 
 2. Use the output of Operation 1 and `GV25` to:
-   1. Identify and enumerate external assets covered by at least one vulnerability scanning software (M3)
-   2. Identify and enumerate external assets not covered by at least one vulnerability scanning software (M4)
 
-3. Use the `GV25` and `GV3` to:
-   1. Identify and enumerate vulnerability scanners properly configured to scan every 30 days or less (M5)
-   2. Identify and enumerate vulnerability scanners not properly configured to scan every 30 days or less (M6)
+    1.  Identify and enumerate external assets covered by at least one vulnerability scanning software (M3)
+    2.  Identify and enumerate external assets not covered by at least one vulnerability scanning software (M4)
+
+3.  Use the `GV25` and `GV3` to:
+
+    1.  Identify and enumerate vulnerability scanners properly configured to scan every 30 days or less (M5)
+    2.  Identify and enumerate vulnerability scanners not properly configured to scan every 30 days or less (M6)
 
 ### Measures
 
@@ -489,10 +491,11 @@ Remediate detected vulnerabilities in software through processes and tooling on 
 ### Operations
 
 1. For each asset in `GV1`, compare Inputs 2 and 3:
-   1. Identify and enumerate assets listed with the same vulnerability on both scans (M2)
-   2. Identify and enumerate assets previously found in Input 3 that are no longer listed in Input 2 with the same vulnerability (M3)
 
-2. Compare Inputs 4 and 5 and capture the timeframe between scans in days (M4)
+     1.  Identify and enumerate assets listed with the same vulnerability on both scans (M2)
+     2.  Identify and enumerate assets previously found in Input 3 that are no longer listed in Input 2 with the same vulnerability (M3)
+
+2.  Compare Inputs 4 and 5 and capture the timeframe between scans in days (M4)
 
 ### Measures
 
