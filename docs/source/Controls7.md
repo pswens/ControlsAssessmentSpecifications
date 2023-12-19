@@ -336,33 +336,32 @@ Perform automated vulnerability scans of internal enterprise assets on a quarter
 
 ### Operations
 
-1. Use the `GV5` authorized software inventory to:
+1.  Use the `` GV5`authorized software inventory to:
+
+     1. Identify and enumerate `GV25 `` vulnerability scanning software (M1)
+     1.  Identify and enumerate authenticated vulnerability scanning software (M2)
+
+2.  Use the `GV1` enterprise asset inventory to identify and enumerate all internal assets (M3)
+
+3.  Use the output of Operation 2 and Operation 1.1:
    
-   1. Identify and enumerate `GV25` vulnerability scanning software (M1).
-      
-      1. Identify and enumerate authenticated vulnerability scanning software (M2).
+      1.  Identify and enumerate internal assets covered by at least one vulnerability scanning software (M4)
+      2.  Identify and enumerate internal assets not covered by at least one vulnerability scanning software (M5)
 
-2. Use the `GV1` enterprise asset inventory to identify and enumerate all internal assets (M3).
+6. Use the output of Operation 2 and Operation 1.2:
 
-3. Use the output of Operation 2 and Operation 1.1:
-   
-   1. Identify and enumerate internal assets covered by at least one vulnerability scanning software (M4).
-   2. Identify and enumerate internal assets not covered by at least one vulnerability scanning software (M5).
+     1.  Identify and enumerate internal assets covered by at least one authenticated vulnerability scanner (M6)
+     2.  Identify and enumerate internal assets not covered by at least one authenticated vulnerability scanner (M7)
 
-4. Use the output of Operation 2 and Operation 1.2:
-   
-   1. Identify and enumerate internal assets covered by at least one authenticated vulnerability scanner (M6).
-   2. Identify and enumerate internal assets not covered by at least one authenticated vulnerability scanner (M7).
+9. Use the output of Operation 1.1 and `GV3`:
 
-5. Use the output of Operation 1.1 and `GV3`:
-   
-   1. Identify and enumerate vulnerability scanners properly configured to scan every 3 months or less (M8).
-   2. Identify and enumerate vulnerability scanners not properly configured to scan every 3 months or less (M9).
+     1.  Identify and enumerate vulnerability scanners properly configured to scan every 3 months or less (M8)
+     2.  Identify and enumerate vulnerability scanners not properly configured to scan every 3 months or less (M9)
 
-6. Use the output of Operation 1.2 and `GV3`:
+10. Use the output of Operation 1.2 and `GV3`:
     
-   1. Identify and enumerate authenticated vulnerability scanners properly configured to scan every 3 months or less (M10).
-   2. Identify and enumerate authenticated vulnerability scanners not properly configured to scan every 3 months or less (M11).
+    1.  Identify and enumerate authenticated vulnerability scanners properly configured to scan every 3 months or less (M10)
+    2.  Identify and enumerate authenticated vulnerability scanners not properly configured to scan every 3 months or less (M11)
 
 ### Measures
 
@@ -428,17 +427,15 @@ Perform automated vulnerability scans of externally exposed enterprise assets us
 
 ### Operations
 
-1. Use the `GV1` enterprise asset inventory to identify and enumerate all external assets (M2).
+1. Use the `GV1` enterprise asset inventory to identify and enumerate all external assets (M2)
 
 2. Use the output of Operation 1 and `GV25` to:
-
-   1. Identify and enumerate external assets covered by at least one vulnerability scanning software (M3).
-   2. Identify and enumerate external assets not covered by at least one vulnerability scanning software (M4).
+   1. Identify and enumerate external assets covered by at least one vulnerability scanning software (M3)
+   2. Identify and enumerate external assets not covered by at least one vulnerability scanning software (M4)
 
 3. Use the `GV25` and `GV3` to:
-
-   1. Identify and enumerate vulnerability scanners properly configured to scan every 30 days or less (M5).
-   2. Identify and enumerate vulnerability scanners not properly configured to scan every 30 days or less (M6).
+   1. Identify and enumerate vulnerability scanners properly configured to scan every 30 days or less (M5)
+   2. Identify and enumerate vulnerability scanners not properly configured to scan every 30 days or less (M6)
 
 ### Measures
 
@@ -492,11 +489,10 @@ Remediate detected vulnerabilities in software through processes and tooling on 
 ### Operations
 
 1. For each asset in `GV1`, compare Inputs 2 and 3:
+   1. Identify and enumerate assets listed with the same vulnerability on both scans (M2)
+   2. Identify and enumerate assets previously found in Input 3 that are no longer listed in Input 2 with the same vulnerability (M3)
 
-   1. Identify and enumerate assets listed with the same vulnerability on both scans (M2).
-   2. Identify and enumerate assets previously found in Input 3 that are no longer listed in Input 2 with the same vulnerability (M3).
-
-2. Compare Inputs 4 and 5 and capture the timeframe between scans in days (M4).
+2. Compare Inputs 4 and 5 and capture the timeframe between scans in days (M4)
 
 ### Measures
 
