@@ -192,13 +192,12 @@ Standardize time synchronization. Configure at least two synchronized time sourc
 
 ### Operations
 
-1. Using 'GV27`, identify and enumerate assets capable of supporting time synchronization (M1)
+1. Using `GV27`, identify and enumerate assets capable of supporting time synchronization (M1)
 
 2. Check the configurations of the assets identified in Operation 1:
-
-   1. Identify and enumerate the assets configured using at least two approved time sources from Input 2 (M2).
-   2. Identify and enumerate the assets configured using time sources not on the approved list (M3).
-   3. Identify and enumerate the assets not configured using time sources (M4).
+   1. Identify and enumerate the assets configured using at least two approved time sources from Input 2 (M2)
+   2. Identify and enumerate the assets configured using time sources not on the approved list (M3)
+   3. Identify and enumerate the assets not configured using time sources (M4)
 
 ### Measures
 
