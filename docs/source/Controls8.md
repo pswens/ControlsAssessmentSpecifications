@@ -51,15 +51,17 @@ Establish and maintain an audit log management process that defines the enterpri
 
 ### Operations
 
-1. Check if `GV26` the audit log management process exists
-   1. If it exists, M1 = 1
-   2. If it does not exist, M1 = 0
+1. Check if `GV26` the audit log management process exists:
 
-2. Review `GV26` for elements of the process and, at a minimum, address the collection, review, and retention of audit logs for enterprise assets.
-   1. For each element that exists, assign a value of 1. Sum the values of existing elements. (M2)
+    1.  If it exists, M1 = 1
+    2.  If it does not exist, M1 = 0
 
-3. Compare the date from Input 2 and the current date. Capture the timeframe in terms of months. (M3)
+2.  Review `GV26` for elements of the process and, at a minimum, address the collection, review, and retention of audit logs for enterprise assets:
 
+    1.  For each element that exists, assign a value of 1. Sum the values of existing elements. (M2)
+    2.  Identify and enumerate vulnerability scanners not properly configured to scan every 30 days or less (M6)
+
+3.  Compare the date from Input 2 and the current date. Capture the timeframe in terms of months. (M3)
 
 ### Measures
 
