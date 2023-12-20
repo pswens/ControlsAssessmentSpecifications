@@ -52,7 +52,7 @@ Establish and maintain an audit log management process that defines the enterpri
 ### Operations
 
 1. Check if `GV26` the audit log management process exists
-
+   
    1. If it exists, M1 = 1
    2. If it does not exist, M1 = 0
 
