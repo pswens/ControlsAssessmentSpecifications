@@ -143,7 +143,7 @@ Ensure that logging destinations maintain adequate storage to comply with the en
 1. `GV27`: Assets capable of supporting logging
 2. `GV26`: Enterprise's audit log management process
 
-## Assumptions
+### Assumptions
 
 - It is assumed that if an asset is properly configured to meet the retention policy, that would include log rotation, maximum storage size, etc.
 
@@ -192,14 +192,13 @@ Standardize time synchronization. Configure at least two synchronized time sourc
 
 ### Operations
 
-1.  Using 'GV27` identify and enumerate assets capable of
-    supporting time synchronization (M1)
+1. Using 'GV27`, identify and enumerate assets capable of supporting time synchronization (M1)
 
-2.  Check the configurations of the assets identified in Operation 1
+2. Check the configurations of the assets identified in Operation 1:
 
-   1.  Identify and enumerate the assets configured using at least two approved time sources from Input 2 (M2)
-   2.  Identify and enumerate the assets configured using time sources not on the approved list (M3)
-   3.  Identify and enumerate the assets not configured using time sources (M4)
+   1. Identify and enumerate the assets configured using at least two approved time sources from Input 2 (M2).
+   2. Identify and enumerate the assets configured using time sources not on the approved list (M3).
+   3. Identify and enumerate the assets not configured using time sources (M4).
 
 ### Measures
 
