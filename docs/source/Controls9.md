@@ -366,7 +366,7 @@ gateway.
 
 1.  Use `GV1` to identify and enumerate assets configured as email  gateways (M1)
 
-2.  Using `GV3` check the attachment blocking configuration for every asset identified in Operation 1
+2.  Using `GV3` check the attachment blocking configuration for every asset identified in Operation-1
 
     1.  Identify and enumerate email gateways properly configured to block unnecessary attachments (M2)
     2.  Identify and enumerate email gateways not properly configured to block unnecessary attachments (M3)
