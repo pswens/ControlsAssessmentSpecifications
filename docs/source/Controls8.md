@@ -238,6 +238,17 @@ Configure detailed audit logging for enterprise assets containing sensitive data
 ### Operations
 
 1. Review `GV26` for detailed logging requirements such as event source, date, username, timestamp, source addresses, and destination addresses:
+   1.  For each detailed logging requirement included, assign a value of 1. Sum all requirements included (M2).
+   2.  Subitem 1.2
+2. Second item
+   2.1. Subitem 2.1
+   2.2. Subitem 2.2
+3. Third item
+   3.1. Subitem 3.1
+   3.2. Subitem 3.2
+
+
+1. Review `GV26` for detailed logging requirements such as event source, date, username, timestamp, source addresses, and destination addresses:
 
    1.1. For each detailed logging requirement included, assign a value of 1. Sum all requirements included (M2).
 
