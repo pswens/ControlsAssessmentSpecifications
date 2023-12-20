@@ -53,8 +53,8 @@ Establish and maintain an audit log management process that defines the enterpri
 
 1. Check if `GV26` the audit log management process exists
 
-   1.  If it exists, M1 = 1
-   2.  2.  If it does not exist, M1 = 0
+   1. If it exists, M1 = 1
+   2. If it does not exist, M1 = 0
 
 2. Review `GV26` for elements of the process and, at a minimum, address the collection, review, and retention of audit logs for enterprise assets.
 
