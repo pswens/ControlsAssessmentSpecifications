@@ -80,7 +80,97 @@ If M1 is 0, this safeguard receives a failing score. The other metrics don't app
 | **Calculation** | `M2 / 3`                                            |
 
 --------------------------------------------------------------------------------
+
+## 8.2: Collect Audit Logs
+
+Collect audit logs. Ensure that logging, per the enterprise’s audit log management process, has been enabled across enterprise assets.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Network    | Detect            | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+- Safeguard 4.1: Establish and Maintain a Secure Configuration Process
+- Safeguard 8.1: Establish and Maintain an Audit Log Management Process
+
+### Inputs
+
+1. `GV1`: Enterprise asset inventory
+2. `GV3`: Configuration standards
+3. `GV26`: Enterprise's audit log management process
+
+### Operations
+
+1.  Use `GV1` to identify and enumerate assets capable of supporting logging `GV27` (M1):
+
+2.  Use `GV26` and `GV3` as guides to determine, for each asset identified in Operation 1, if it is configured to log events as outlined by the enterprise's process
+
+    1.  Identify and enumerate assets properly configured to log events per the process (M2)
+    2.  Identify and enumerate assets not properly configured to log events per the process (M3)
+
+### Measures
+
+- M1 = Count of assets capable of supporting logging
+- M2 = Count of properly configured assets to log events per the audit log management process
+- M3 = Count of assets not properly configured to log events per the audit log management process
+
+### Metrics
+
+#### Coverage
+
+| **Metric**      | The ratio of logging-capable assets properly configured per the audit log management process. |
+|-----------------|-------------------------------------------------------------------------------------------------|
+| **Calculation** | `M2 / M1`                                                                                       |
+
 --------------------------------------------------------------------------------
+
+## 8.3: Ensure Adequate Audit Log Storage
+
+Ensure that logging destinations maintain adequate storage to comply with the enterprise’s audit log management process.
+
+| Asset Type | Security Function | Implementation Groups |
+|------------|-------------------|-----------------------|
+| Network    | Protect           | 1, 2, 3               |
+
+### Dependencies
+
+- Safeguard 1.1: Establish and Maintain Detailed Enterprise Asset Inventory
+
+### Inputs
+
+1. `GV27`: Assets capable of supporting logging
+2. `GV26`: Enterprise's audit log management process
+
+## Assumptions
+
+- It is assumed that if an asset is properly configured to meet the retention policy, that would include log rotation, maximum storage size, etc.
+
+### Operations
+
+1.  For each asset in `GV27`, collect the asset's logging configuration.
+
+2.  Compare the output of Operation 1 and the retention portion of `G26`:
+
+    1.  Identify and enumerate assets configured to comply with the retention portion of the process (M2).
+
+    2.  Identify and enumerate assets not configured to comply with the retention portion of the process (M3).
+
+### Measures
+
+- M1 = Count of `GV27` assets capable of supporting logging
+- M2 = Count of assets properly configured to meet retention requirements
+- M3 = Count of assets not properly configured to meet retention requirements
+
+### Metrics
+
+#### Logging Storage Coverage
+
+| **Metric**      | The percentage of assets compliant with the organization's logging policy |
+|-----------------|------------------------------------------------------------------------|
+| **Calculation** | `M2 / M1`                                                       |
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
