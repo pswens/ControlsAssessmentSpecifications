@@ -18,7 +18,7 @@ nav:
         - 'CIS Control 8: Audit Log Management': source/Controls8.md
         - 'CIS Control 9: Email and Web Browser Protections': source/Controls9.md
         - 'CIS Control 10: Malware Defenses': source/Controls10.md
-        - 'CIS Control 11: Data Recovery': sources/Controls11.md
+        - 'CIS Control 11: Data Recovery': source/Controls11.md
         
 theme:
     name: readthedocs
