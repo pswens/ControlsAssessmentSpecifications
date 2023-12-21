@@ -19,6 +19,7 @@ nav:
         - 'CIS Control 9: Email and Web Browser Protections': source/Controls9.md
         - 'CIS Control 10: Malware Defenses': source/Controls10.md
         - 'CIS Control 11: Data Recovery': source/Controls11.md
+        - 'CIS Control 12: Network Infrastructure Management': source/Controls12.md
         
 theme:
     name: readthedocs
