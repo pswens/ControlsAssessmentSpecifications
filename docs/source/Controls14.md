@@ -642,7 +642,7 @@ awareness training for high-profile roles.
     1.  Identify and enumerate members whose most recent training date is less than or equal to twelve months from the current date (M5)
     2.  Identify and enumerate members whose most recent training date is greater than twelve months from the current date (M6)
 
-## Measures
+### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of Input 1 `GV43`
