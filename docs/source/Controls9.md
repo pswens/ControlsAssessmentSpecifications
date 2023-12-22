@@ -416,7 +416,7 @@ Deploy and maintain email server anti-malware protections, such as attachment sc
     1.  Identify and enumerate email servers with configured anti-malware protection (M2)
     2.  Identify and enumerate email servers without configured anti-malware protection (M3)
 
-# Measures
+### Measures
 
 -   M1 = Count of email servers
 -   M2 = Count of properly configured email servers
