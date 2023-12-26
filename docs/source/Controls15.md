@@ -225,7 +225,7 @@ significant enterprise changes occur that could impact this Safeguard.
 -   M4 = Count of service providers with classification
 -   M5 = Count of service providers without classification
 
-## Metrics
+### Metrics
 
 -   If M1 is a 0, this safeguard receives a failing score. The other
     metrics don\'t apply.
