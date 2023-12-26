@@ -23,6 +23,7 @@ nav:
         - 'CIS Control 13: Network Monitoring and Defense': source/Controls13.md
         - 'CIS Control 14: Security Awareness and Skills Training': source/Controls14.md
         - 'CIS Control 15: Service Provider Management': source/Controls15.md
+        - 'CIS Control 16: Application Software Security': source/Controls16.md
         
 theme:
     name: readthedocs
