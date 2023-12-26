@@ -497,16 +497,17 @@ action.
 
 ------------------------------------------------------------------------------
 
-## 17.8: Conduct Post-Incident Reviews
+## 17.9: Establish and Maintain Security Incident Thresholds
 
-Conduct post-incident reviews. Post-incident reviews help prevent
-incident recurrence through identifying lessons learned and follow-up
-action.
+Establish and maintain security incident thresholds, including, at a
+minimum, differentiating between an incident and an event. Examples can
+include abnormal activity, security vulnerability, security weakness,
+data breaches, privacy incidents, etc. Review annually or when significant
+enterprise changes occur, that could impact this Safeguard.
 
 | Asset Type   | Security Function   | Implementation Groups |
 | ------------ | ------------------- | --------------------- |
-| N/A          | Recover             | 2, 3                  |
-
+| N/A          | N/A                 | 1, 2, 3               |
 
 ### Dependencies
 
@@ -515,32 +516,38 @@ action.
 ### Inputs
 
 1.  `GV52`: Incident response process
-2.  Last post-incident review
+2.  Date of last update or review of the documentation
 
 ### Operations
 
-1.  Determine whether the enterprise\'s incident response process includes post-incident reviews by reviewing Input 1 `GV52`
+1.  Determine whether the enterprise documents security incident threshold by reviewing Input 1 `GV52`
 
-    1.  If the documentation includes post-indecent reviews, M1 = 1
-    2.  If the documentation does not include post-incident reviews, M1 = 0
+    1.  If the documentation for a security incident threshold exists, M1 = 1
+    2.  If the documentation for a security incident threshold does not exist, M1 = 0
 
-2.  Use Input 2 to determine if post-incident reviews include, at a minimum, the following components: lessons learned and follow-up actions
+2.  Determine whether the documentation, at a minimum, outlines the following components: differentiates between incident and event, prioritization schema based on known or potential impact, procedure relying on this schema is used to determine status update frequency during incident handling, and procedure relying on this schema is used to determine escalation paths during incident handling
 
-    1.  For each component included, assign a value of 1. Sum the values. (M2)
+    1.  For each mechanism included, assign a value of 1. Sum the values. (M2)
+
+3.  Compare Input 2 to the current date and capture the timeframe in months (M3)
 
 ### Measures
 
 -   M1 = Output of Operation 1
 -   M2 = Count of components included in the documentation
+-   M3 = Timeframe since the last update or review of documentation in
+    months
 
 ### Metrics
 
 -   If M1 is 0, this safeguard receives a failing score. The other
     metrics don\'t apply.
+-   If M3 is greater than twelve months, then this safeguard is measured
+    at a 0 and receives a failing score. The other metrics don\'t apply.
 
-#### Completeness 
+#### Completeness
 
-| **Metric**      | The percentage of components included in post-incident reviews during Incident response exercises |
-|-----------------|----------------------------------------------------------------------------------------------------|
-| **Calculation** | `M2 / 2`                                                                                    |
+| **Metric**      | The percentage of components included in the documentation for security incident thresholds |
+|-----------------|----------------------------------------------------------------------------------------|
+| **Calculation** | `M2 / 4`                                                                        |
 
