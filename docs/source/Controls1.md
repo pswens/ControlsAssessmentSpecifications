@@ -88,7 +88,7 @@ assets bi-annually, or more frequently.
 3. Date of last update to the Detailed Enterprise Asset Inventory
 
 
-#### Assumptions
+### Assumptions
 
 1.  Devices belonging to the organization, but not connected to the
     organization's network, require manual discovery in order to be
@@ -146,7 +146,7 @@ assets bi-annually, or more frequently.
 ### Procedural Review
 
 Manual review/rating of the inventory procedures, to include adding and
-removing assets, and the time allowable or expected, after acquisition
+removing assets, and the time allowable or expected, after the acquisition
 or disposal of assets.
 
 -------------------------------------------------------------------
@@ -171,13 +171,13 @@ the asset.
 
 1.  `GV1`: Detailed Enterprise Asset Inventory
 2.  `GV2`: Unauthorized Assets
-3.  The enterprise defined time frame for removing unauthorized assets
+3.  The enterprise-defined time frame for removing unauthorized assets
     (weekly or more often).
 
 ### Assumptions
 
 1.  If the item is not reachable, it may be reasonable to assume it has
-    been removed from the network and therefore dealt with.
+    been removed from the network and, therefore, dealt with.
 
 #### Operations
 
@@ -190,6 +190,7 @@ list is available:
     inventory from `GV1`.
 
 2. For those items in `GV2` that are not in `GV1`, scan the network to determine if the item is still reachable on the network.
+
     1. Enumerate the items from `GV2` that are unreachable (M4)
     2. Enumerate the items from `GV1` that are unreachable (M5)
 
@@ -239,7 +240,7 @@ Devices | Identify | 2, 3
 4.  Timeframe between two active asset discovery tool scans.
 5.  `GV3`: Configuration Standard
 
-#### Assumptions
+### Assumptions
 
 1.  The asset discovery tools on the provided list are active asset
     discovery tools, as opposed to passive asset discovery tools
@@ -255,8 +256,9 @@ Devices | Identify | 2, 3
     interface with `GV1` by using `GV3`
 
 3. Using the configuration information in `GV3`, check the approved configurations to verify that the tools are capable of interfacing with the asset inventory to make automatic updates.
-   1. Enumerate those tools that are compliant (M3)
-   2. Enumerate those that are not compliant (M4).
+
+    1. Enumerate those tools that are compliant (M3)
+    2. Enumerate those that are not compliant (M4).
 
 
 ### Measures
@@ -313,16 +315,14 @@ frequently.
 1.  List of DHCP servers
 2.  `GV41`: List of CMDB servers
 
-#### Assumptions
+### Assumptions
 
 1.  CMDB servers are configured to pull from DHCP logs
 
 ### Operations
 
--   For each DHCP server, enumerate those where DHCP logging is enabled
-    (M2)
--   For each CMDB server, enumerate those where DHCP logs are used to
-    update IP addresses (M4)
+1.  For each DHCP server, enumerate those where DHCP logging is enabled (M2)
+2.  For each CMDB server, enumerate those where DHCP logs are used to update IP addresses (M4)
 
 ### Measures
 
@@ -382,7 +382,7 @@ asset inventory at least weekly, or more frequently.
 
 #### Operations
 
-1.  Identify approved configuratons for passive asset discovery tools
+1.  Identify approved configurations for passive asset discovery tools
     using `GV3`
 
 2. For each passive asset discovery tool provided in Input 2, check the tool's configuration against the appropriate approved configuration from `GV3`
