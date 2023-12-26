@@ -24,6 +24,8 @@ nav:
         - 'CIS Control 14: Security Awareness and Skills Training': source/Controls14.md
         - 'CIS Control 15: Service Provider Management': source/Controls15.md
         - 'CIS Control 16: Application Software Security': source/Controls16.md
+        - 'CIS Control 17: Incident Response Management': source/Controls17.md
+        - 'CIS Control 18: Penetration Testing': source/Controls18.md
         
 theme:
     name: readthedocs
